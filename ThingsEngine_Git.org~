@@ -1,0 +1,43 @@
+#+TITLE: This Is A Map for Working
+#+DATE: 2019-07-01 Mon
+#+AUTHOR: Dr Yufeng Lin
+#+EMAIL: y.lin@cqu.edu.au
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:t p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:t todo:t |:t
+#+CREATOR: Emacs 25.2.2 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+DRAWERS: ANSWER
+#+STARTUP: content
+
+* The Primer
+** What is Version Control
+** Team Work
+*** centralized & distributed
+* Git Introduction
+** What is Git
+[[https:/en.wikipedia.org][Git]] is a distributed version-control system for tracking changes in source code during software development. 
+It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. 
+Its goals include speed, data integrity, and support for distributed, non-linear workflows.
+Git is free and open-source software distributed under the terms of the GNU General Public License version 2.
+
+*** Performance
+*** Security
+*** Flexibility
+
+** History
+Git was created by Linus Torvalds in 2005 for development of the Linux kernel, with other kernel developers contributing to its initial development. Its current maintainer since 2005 is Junio Hamano.
+
+** Culture
+** Installation of Git
+*** Install Git on Mac OS X
+*** Install Git on Windows
+*** Install Git on Linux
+    - Debian / Ubuntu
+    -
+*** Git cheat sheet
