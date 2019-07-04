@@ -49,7 +49,10 @@ Git was created by Linus Torvalds in 2005 for development of the Linux kernel, w
 ** Culture
 ** Installation of Git
 *** Install Git on Mac OS X
+test
 *** Install Git on Windows
+test
+This file has been changed
 *** Install Git on Linux
     - Debian / Ubuntu
     -
