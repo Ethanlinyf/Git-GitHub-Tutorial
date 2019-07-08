@@ -49,12 +49,37 @@ Git was created by Linus Torvalds in 2005 for development of the Linux kernel, w
 ** Culture
 ** Installation of Git
 *** Install Git on Mac OS X
-test 
-add another line
+There are several ways to install Git on a Mac. In fact, if you've installed XCode (or it's Command Line Tools), Git may already be installed. To find out, open a terminal and enter git --version.
+#+BEGIN_SRC Sh
+git --version
+#+END_SRC
+
+- Git for Mac Installer
+  the latest [[https://sourceforge.net/projects/git-osx-installer/files/][Git for Mac installer]].
+- Install Git with Homebrew
+#+BEGIN_SRC sh
+brew install git
+#+END_SRC  
 *** Install Git on Windows
-test
-This file has been changed
+The latest Git for [[https://gitforwindows.org/][Windows installe]].
+
 *** Install Git on Linux
-    - Debian / Ubuntu
-    -
-*** Git cheat sheet
+- Debian / Ubuntu
+#+BEGIN_SRC sh
+sudo apt-get update
+sudo apt-get install git
+#+END_SRC
+*** Configure your Git username and email
+Configure your Git username and email using the following commands, replacing "Your name" with your own. These details will be associated with any commits that you create:
+#+BEGIN_SRC sh
+git config --global user.name "Your name"
+git config --global user.email "Your email address"
+#+END_SRC
+* Getting Started
+** Setting up a repository
+
+* Remote Repository
+* Advanced Topic
+** Brench Management
+** Bookmark Management
+** Custimization
