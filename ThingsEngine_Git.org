@@ -79,6 +79,11 @@ git config --global user.email "Your email address"
 ** Setting up a repository
 
 * Remote Repository
+#+BEGIN_SRC shell
+ssh-keygen -t rsa -c "youremail@example.com"
+#+END_SRC
+
+You could find a directory .ssh in your home folder. id_rsa and *id_rsa.pub*
 * Advanced Topic
 ** Brench Management
 ** Bookmark Management
