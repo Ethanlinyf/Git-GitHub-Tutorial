@@ -76,8 +76,110 @@ git config --global user.name "Your name"
 git config --global user.email "Your email address"
 #+END_SRC
 * Getting Started
-** Setting up a repository
+** initialise a repository
 
+1. create a folder for testing
+#+BEGIN_SRC shell
+mkdir learngit
+cd learngit
+pwd 
+#+END_SRC
+
+2. initialise a repository
+
+#+BEGIN_SRC shell
+git init
+#+END_SRC
+Initialized empty Git repository in /Users/ethanlin/Documents/ThingsEngine/ThingsEngine-Git/.git/
+
+3. add a file name readme.md
+"Git is a version control system.
+Git is free software." in readme.md
+
+4. add and commit
+
+#+BEGIN_SRC shell
+git add readme.txt
+
+git commit -m "create a readme file"
+#+END_SRC
+[master (root-commit) eaadf4e] wrote a readme file
+ 1 file changed, 2 insertions(+)
+ create mode 123456 readme.md
+
+4. add more files
+#+BEGIN_SRC shell
+touch file1.txt file2.txt file3.txt
+#+END_SRC
+
+#+BEGIN_SRC shell
+git add file1.txt
+git add file2.txt file3.txt
+#+END_SRC
+
+#+BEGIN_SRC shell
+git commit -m "add 3 files"
+#+END_SRC
+
+5. adjustment for readme.md
+"Git is a distributed version control system.
+Git is free software."
+
+6. git status
+
+#+BEGIN_SRC shell
+git status
+#+END_SRC
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+ 
+	modified:   readme.txt
+ 
+no changes added to commit (use "git add" and/or "git commit -a")
+
+7. git diff
+
+#+BEGIN_SRC shell
+git diff readme.md
+#+END_SRC
+
+diff --git a/readme.md b/readme.md
+index 46d49bf..9247db6 100644
+--- a/readme.md
++++ b/readme.md
+@@ -1,2 +1,2 @@
+-Git *is* a version control system.
++Git *is* a distributed version control system.
+ Git *is* free software.
+
+8. update readme.md, new version
+
+#+BEGIN_SRC shell
+git add readme.md
+#+END_SRC
+
+#+BEGIN_SRC shell
+git status
+#+END_SRC
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+ 
+    modified:   readme.md
+
+#+BEGIN_SRC shell
+git commit -m "add distributed"
+#+END_SRC
+[master e475afc] add distributed
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+#+BEGIN_SRC 
+$ git status
+#+END_SRC
+On branch master
+nothing to commit, working tree clean
 * Remote Repository
 #+BEGIN_SRC shell
 ssh-keygen -t rsa -c "youremail@example.com"
