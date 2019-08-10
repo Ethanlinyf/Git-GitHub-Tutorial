@@ -1,7 +1,7 @@
-#+TITLE: This Is A Map for Working
+#+TITLE: Git Tutorial
 #+DATE: 2019-07-01 Mon
 #+AUTHOR: Dr Yufeng Lin
-#+EMAIL: y.lin@cqu.edu.au
+#+EMAIL: yourslinyf@gmail.com
 #+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
 #+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
 #+OPTIONS: e:t email:nil f:t inline:t num:t p:nil pri:nil stat:t
