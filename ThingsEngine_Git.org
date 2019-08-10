@@ -76,7 +76,12 @@ git config --global user.name "Your name"
 git config --global user.email "Your email address"
 #+END_SRC
 * Getting Started
-** initialise a repository
+** Basic settings 
+
+$ git config --global user.name "Your Name"
+$ git config --global user.email "youremail@example.com"
+
+** Initialize a repository
 
 1. create a folder for testing
 #+BEGIN_SRC shell
@@ -180,12 +185,15 @@ $ git status
 #+END_SRC
 On branch master
 nothing to commit, working tree clean
-* Remote Repository
+* Remote Repository at GitHub
 #+BEGIN_SRC shell
 ssh-keygen -t rsa -c "youremail@example.com"
 #+END_SRC
 
 You could find a directory .ssh in your home folder. id_rsa and *id_rsa.pub*
+
+
+
 * Advanced Topic
 ** Brench Management
 ** Bookmark Management
