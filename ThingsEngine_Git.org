@@ -15,7 +15,7 @@
 #+DRAWERS: ANSWER
 #+STARTUP: content
 
-* The Primer
+* Primer
 ** What is Version Control
 Version control systems are a category of software tools that help a software team manage changes to source code over time. Version control software keeps track of every modification to the code in a special kind of database. If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix the mistake while minimizing disruption to all team members.
 
@@ -71,10 +71,11 @@ sudo apt-get install git
 #+END_SRC
 *** Configure your Git username and email
 Configure your Git username and email using the following commands, replacing "Your name" with your own. These details will be associated with any commits that you create:
-#+BEGIN_SRC sh
+#+BEGIN_SRC shell
 git config --global user.name "Your name"
 git config --global user.email "Your email address"
 #+END_SRC
+
 * Getting Started
 ** Basic settings 
 
@@ -82,26 +83,25 @@ $ git config --global user.name "Your Name"
 $ git config --global user.email "youremail@example.com"
 
 ** Initialize a repository
-
-1. create a folder for testing
+- create a folder for testing
 #+BEGIN_SRC shell
 mkdir learngit
 cd learngit
 pwd 
 #+END_SRC
 
-2. initialise a repository
+- initialize a repository
 
 #+BEGIN_SRC shell
 git init
 #+END_SRC
 Initialized empty Git repository in /Users/ethanlin/Documents/ThingsEngine/ThingsEngine-Git/.git/
 
-3. add a file name readme.md
+- add a file name readme.md
 "Git is a version control system.
 Git is free software." in readme.md
 
-4. add and commit
+- add and commit
 
 #+BEGIN_SRC shell
 git add readme.txt
@@ -112,7 +112,7 @@ git commit -m "create a readme file"
  1 file changed, 2 insertions(+)
  create mode 123456 readme.md
 
-4. add more files
+- add more files
 #+BEGIN_SRC shell
 touch file1.txt file2.txt file3.txt
 #+END_SRC
@@ -126,11 +126,11 @@ git add file2.txt file3.txt
 git commit -m "add 3 files"
 #+END_SRC
 
-5. adjustment for readme.md
+- adjustment for readme.md
 "Git is a distributed version control system.
 Git is free software."
 
-6. git status
+- git status
 
 #+BEGIN_SRC shell
 git status
@@ -144,7 +144,7 @@ Changes not staged for commit:
  
 no changes added to commit (use "git add" and/or "git commit -a")
 
-7. git diff
+- git diff
 
 #+BEGIN_SRC shell
 git diff readme.md
@@ -159,7 +159,7 @@ index 46d49bf..9247db6 100644
 +Git *is* a distributed version control system.
  Git *is* free software.
 
-8. update readme.md, new version
+- update readme.md, new version
 
 #+BEGIN_SRC shell
 git add readme.md
@@ -195,7 +195,7 @@ You could find a directory .ssh in your home folder. id_rsa and *id_rsa.pub*
 * Advanced Topic
 ** Brench Management
 ** Bookmark Management
-** Custimization
+** Customization
 * Magit Tutorial
 ** Basic magit
 *** Create a git repo
