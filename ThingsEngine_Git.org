@@ -193,7 +193,73 @@ ssh-keygen -t rsa -c "youremail@example.com"
 You could find a directory .ssh in your home folder. id_rsa and *id_rsa.pub*
 
 * Advanced Topic
-** Brench Management
+** Branch Management
+Compared with SVN, one of the specific features Git has is about branch. 
+
+Teamwork in the real project development will benifit from the feature of branch. In this tutorial, the followings will be introduced:
+- what is a branch
+- The main branch operations
+- how to achieve effective teamwork by through branch management
+
+*** What is a branch
+“A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch name in Git is master. As you initially make commits, you're given a master branch that points to the last commit you made. Every time you commit, it moves forward automatically.”
+
+*** Common operations of branches
+
+- Creat a new branch based on the current branch
+#+BEGIN_SRC shell
+git branch develop
+#+END_SRC
+
+- Swith to the new branch
+#+BEGIN_SRC shell
+git checkout develop
+#+END_SRC
+
+- one step to create and switch to a new branch develop
+#+BEGIN_SRC shell
+git checkout -b develop
+#+END_SRC
+
+- Push the created branch to github
+#+BEGIN_SRC shell
+git push origin develop
+#+END_SRC
+
+- Check the local branches
+#+BEGIN_SRC shell
+git branch
+#+END_SRC
+
+- Check the remot branches
+#+BEGIN_SRC shell
+git branch -r
+#+END_SRC
+
+- Delete a local branch named develop
+#+BEGIN_SRC shell
+git branch -d develop
+#+END_SRC
+
+- Delete a remote branch named develop
+#+BEGIN_SRC shell
+git push origin :develop
+#+END_SRC
+
+- Fetch a remote branch to local
+#+BEGIN_SRC shell
+git checkout develop origin/develop
+#+END_SRC
+
+-  Fetch a remote branch to local and switch to this branch
+#+BEGIN_SRC shell
+git checkout -b develop origin/develop
+#+END_SRC
+
+*** TODO Git Flow, teamwork based on branches
+    SCHEDULED: <2019-08-14 Wed 12:00>
+
+
 ** Bookmark Management
 ** Customization
 * Magit Tutorial
@@ -374,4 +440,6 @@ You could find a directory .ssh in your home folder. id_rsa and *id_rsa.pub*
 *** Cherry-picking 
  [[info:magit#Cherry%20picking][info:magit#Cherry picking]]
 
+
+* Test
 
