@@ -259,6 +259,9 @@ git checkout -b develop origin/develop
 *** TODO Git Flow, teamwork based on branches
     SCHEDULED: <2019-08-14 Wed 12:00>
 
+[[file:git-model.png][A successful Git branching model]]
+
+
 
 ** Bookmark Management
 ** Customization
@@ -440,6 +443,15 @@ git checkout -b develop origin/develop
 *** Cherry-picking 
  [[info:magit#Cherry%20picking][info:magit#Cherry picking]]
 
+* TODO Test
+  DEADLINE: <2019-08-13 Tue 19:00>
+<2019-08-13 Tue 18:00>
 
-* Test
 
+:ANSWER:
+This is a test drawer
+:END:
+
+:Ans:
+This is a test two
+:END:
