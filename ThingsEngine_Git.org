@@ -257,13 +257,40 @@ git checkout develop origin/develop
 git checkout -b develop origin/develop
 #+END_SRC
 
+*** Conflict resolution
+Merge conflicts occur when competing changes are made to the same line of a file, or when one person edits a file and another person deletes the same file. For more information, see "[[https://help.github.com/en/articles/about-merge-conflicts/][About merge conflicts]]."
+
+
+*Tip*: You can use the conflict editor on GitHub to resolve competing line change merge conflicts between branches that are part of a pull request. For more information, see "[[https://help.github.com/en/articles/resolving-a-merge-conflict-on-github][Resolving a merge conflict on GitHub.]]"
+
+Create a new branch, such as feature_1. Then, 
+
+#+BEGIN_SRC shell
+$ git checkout -b feature_1
+#+END_SRC
+Switched to a new branch 'feature_1'
+
+Adjust the last line of readme.md as: 
+
+"Creating a *new* branch is quick *AND* simple."
+
+Commit this file, readme.md in the feature_1 branch. 
+#+BEGIN_SRC 
+git add readme.md
+
+git commit -m "AND simple"
+#+END_SRC
+[feature1 14096d0] AND simple
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Switch to the master branch: 
+
+
+
 *** TODO Git Flow, teamwork based on branches
     SCHEDULED: <2019-08-14 Wed 12:00>
 
 [[file:git-model.png][A successful Git branching model]]
-
-
-
 ** Bookmark Management
 ** Customization
 * Magit Tutorial
