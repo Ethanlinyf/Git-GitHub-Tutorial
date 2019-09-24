@@ -330,11 +330,44 @@ Unmerged paths:
 no changes added to commit (use "git add" and/or "git commit -a")
 #+END_SRC
 
+Git uses <<<<<<<，=======，>>>>>>> to mark up the different contents in the different branches. 
 
-*** TODO Git Flow, teamwork based on branches
-    SCHEDULED: <2019-08-14 Wed 12:00>
+Open your favorite text editor, such as Emacs, and navigate to the file that has merge conflicts. You can adjust the readme.md as: 
 
+"Creating a new branch is quick and simple."
+
+Then, use "git log" to show how the branch has been merged. 
+
+#+BEGIN_SRC shell 
+$ git log --graph --pretty=oneline --abbrev-commit
+*   cf810e4 (HEAD -> master) conflict fixed
+|\  
+| * 14096d0 (feature1) AND simple
+* | 5dc6824 & simple
+|/  
+* b17d20e branch test
+* d46f35e (origin/master) remove test.txt
+* b84166e add test.txt
+* 519219b git tracks changes
+* e43a48b understand how stage works
+* 1094adb append GPL
+* e475afc add distributed
+* eaadf4e wrote a readme file
+#+END_SRC
+
+In the final step, you can delete the feature_1 branch. 
+
+#+BEGIN_SRC shell
+$ git branch -d feature1
+Deleted branch feature1 (was 14096d0).
+#+END_SRC
+*** TODO Branch management strategy
 [[file:git-model.png][A successful Git branching model]]
+
+
+
+
+
 ** Bookmark Management
 ** Customization
 * Magit Tutorial
@@ -527,4 +560,4 @@ This is a test drawer
 
 :Ans:
 This is a test two
-:END:
+:END
