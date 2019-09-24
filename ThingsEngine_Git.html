@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-08-11 Sun 14:50 -->
+<!-- 2019-08-15 Thu 09:22 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Git Tutorial</title>
@@ -234,107 +234,114 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org01ab6d3">1. Primer</a>
+<li><a href="#org4695a53">1. Primer</a>
 <ul>
-<li><a href="#org39b770f">1.1. What is Version Control</a></li>
-<li><a href="#org1d49ef0">1.2. Team Work</a>
+<li><a href="#org331f363">1.1. What is Version Control</a></li>
+<li><a href="#orga6eebd6">1.2. Team Work</a>
 <ul>
-<li><a href="#orge075c6b">1.2.1. centralized &amp; distributed</a></li>
+<li><a href="#org8265183">1.2.1. centralized &amp; distributed</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org80a696b">2. Git Introduction</a>
+<li><a href="#org8295303">2. Git Introduction</a>
 <ul>
-<li><a href="#org383e3e2">2.1. What is Git</a>
+<li><a href="#orgca2e623">2.1. What is Git</a>
 <ul>
-<li><a href="#org45a5d36">2.1.1. Performance</a></li>
-<li><a href="#orgf54216d">2.1.2. Security</a></li>
-<li><a href="#org3342f24">2.1.3. Flexibility</a></li>
+<li><a href="#org7058209">2.1.1. Performance</a></li>
+<li><a href="#org6011bab">2.1.2. Security</a></li>
+<li><a href="#org20ec1c0">2.1.3. Flexibility</a></li>
 </ul>
 </li>
-<li><a href="#org72f0d14">2.2. History</a></li>
-<li><a href="#org797132a">2.3. Culture</a></li>
-<li><a href="#org55815e3">2.4. Installation of Git</a>
+<li><a href="#org3cfee36">2.2. History</a></li>
+<li><a href="#org2136df3">2.3. Culture</a></li>
+<li><a href="#org865e47b">2.4. Installation of Git</a>
 <ul>
-<li><a href="#orgfeae9cf">2.4.1. Install Git on Mac OS X</a></li>
-<li><a href="#org1ae0c6c">2.4.2. Install Git on Windows</a></li>
-<li><a href="#org0ce9641">2.4.3. Install Git on Linux</a></li>
-<li><a href="#orgc256548">2.4.4. Configure your Git username and email</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org24c5bd4">3. Getting Started</a>
-<ul>
-<li><a href="#org1aeccdc">3.1. Basic settings</a></li>
-<li><a href="#org3eecacf">3.2. Initialize a repository</a></li>
-</ul>
-</li>
-<li><a href="#orgab8d06e">4. Remote Repository at GitHub</a></li>
-<li><a href="#org71b8c29">5. Advanced Topic</a>
-<ul>
-<li><a href="#org07a41df">5.1. Brench Management</a></li>
-<li><a href="#org3c2dff9">5.2. Bookmark Management</a></li>
-<li><a href="#orge2c870f">5.3. Customization</a></li>
-</ul>
-</li>
-<li><a href="#orgb3d6951">6. Magit Tutorial</a>
-<ul>
-<li><a href="#orgcf2ad4e">6.1. Basic magit</a>
-<ul>
-<li><a href="#org47c46d4">6.1.1. Create a git repo</a></li>
-<li><a href="#orgea2b803">6.1.2. Clone a repo</a></li>
-<li><a href="#org66b2127">6.1.3. Check the status of your repo</a></li>
-<li><a href="#orgb49fc06">6.1.4. Stage a file</a></li>
-<li><a href="#org960e2fa">6.1.5. Commit a file</a></li>
-<li><a href="#orge25c739">6.1.6. Diffs</a></li>
-<li><a href="#orgaa6d1f3">6.1.7. See the log</a></li>
-<li><a href="#org74b661d">6.1.8. Push</a></li>
-<li><a href="#orgcf66186">6.1.9. Pull</a></li>
-<li><a href="#org3dddcb6">6.1.10. Run a command-line git command manually</a></li>
-<li><a href="#org070e31f">6.1.11. Check the output of the git command</a></li>
-<li><a href="#org734d338">6.1.12. Keybindings</a></li>
-</ul>
-</li>
-<li><a href="#orgda51ad7">6.2. Intermediate concepts</a>
-<ul>
-<li><a href="#org230b8fb">6.2.1. Checkout an older version of a file</a></li>
-<li><a href="#orgb36cf2f">6.2.2. Search the commit messages for a pattern</a></li>
-<li><a href="#orgc828044">6.2.3. Revert a commit</a></li>
-<li><a href="#org67d9474">6.2.4. Tag a version</a></li>
-<li><a href="#org48563c1">6.2.5. Checkout an existing branch.</a></li>
-<li><a href="#org820479e">6.2.6. Merge two branches</a></li>
-<li><a href="#org2124069">6.2.7. <span class="todo TODO">TODO</span> Resolving conflicts</a></li>
-<li><a href="#orgdf3cc75">6.2.8. Fetching</a></li>
-<li><a href="#orgf781c59">6.2.9. Add a remote</a></li>
-<li><a href="#org2d562af">6.2.10. Stashing</a></li>
-<li><a href="#org0f977bc">6.2.11. Git blame</a></li>
-</ul>
-</li>
-<li><a href="#org4be0a04">6.3. Advanced concepts</a>
-<ul>
-<li><a href="#orgd730d35">6.3.1. Resetting</a></li>
-<li><a href="#org138259b">6.3.2. Rebasing</a></li>
-<li><a href="#org9da6daa">6.3.3. Create patches</a></li>
-<li><a href="#org368867d">6.3.4. Cherry-picking</a></li>
-<li><a href="#org9982f8e">6.3.5. Apply patches</a></li>
-<li><a href="#orge1d0260">6.3.6. Notes about commits</a></li>
-<li><a href="#org5188ab3">6.3.7. Cherry-picking</a></li>
+<li><a href="#org874497e">2.4.1. Install Git on Mac OS X</a></li>
+<li><a href="#orgebc4774">2.4.2. Install Git on Windows</a></li>
+<li><a href="#org7006d10">2.4.3. Install Git on Linux</a></li>
+<li><a href="#orgbff57fd">2.4.4. Configure your Git username and email</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#orgfd59ded">3. Getting Started</a>
+<ul>
+<li><a href="#org3aee8e6">3.1. Basic settings</a></li>
+<li><a href="#org4400e63">3.2. Initialize a repository</a></li>
+</ul>
+</li>
+<li><a href="#org6b79b4a">4. Remote Repository at GitHub</a></li>
+<li><a href="#org4ab79ae">5. Advanced Topic</a>
+<ul>
+<li><a href="#org4d6fd3b">5.1. Branch Management</a>
+<ul>
+<li><a href="#org24bd6e2">5.1.1. What is a branch</a></li>
+<li><a href="#org8163b36">5.1.2. Common operations of branches</a></li>
+<li><a href="#org6f752f3">5.1.3. <span class="todo TODO">TODO</span> Git Flow, teamwork based on branches</a></li>
+</ul>
+</li>
+<li><a href="#org5f330ad">5.2. Bookmark Management</a></li>
+<li><a href="#org1312baa">5.3. Customization</a></li>
+</ul>
+</li>
+<li><a href="#org17dc4b4">6. Magit Tutorial</a>
+<ul>
+<li><a href="#orgaec9901">6.1. Basic magit</a>
+<ul>
+<li><a href="#org72d4cf6">6.1.1. Create a git repo</a></li>
+<li><a href="#org97df045">6.1.2. Clone a repo</a></li>
+<li><a href="#org4eaef81">6.1.3. Check the status of your repo</a></li>
+<li><a href="#org8d9b150">6.1.4. Stage a file</a></li>
+<li><a href="#orgaab9d9c">6.1.5. Commit a file</a></li>
+<li><a href="#org7320503">6.1.6. Diffs</a></li>
+<li><a href="#org7294b63">6.1.7. See the log</a></li>
+<li><a href="#orgd4541e9">6.1.8. Push</a></li>
+<li><a href="#org09adac3">6.1.9. Pull</a></li>
+<li><a href="#orgccf6c0b">6.1.10. Run a command-line git command manually</a></li>
+<li><a href="#org3c89d6f">6.1.11. Check the output of the git command</a></li>
+<li><a href="#orgc444a07">6.1.12. Keybindings</a></li>
+</ul>
+</li>
+<li><a href="#orgeceb46c">6.2. Intermediate concepts</a>
+<ul>
+<li><a href="#orgaa2d9ea">6.2.1. Checkout an older version of a file</a></li>
+<li><a href="#org2c9af85">6.2.2. Search the commit messages for a pattern</a></li>
+<li><a href="#orgb666486">6.2.3. Revert a commit</a></li>
+<li><a href="#org05386e7">6.2.4. Tag a version</a></li>
+<li><a href="#orgf45254b">6.2.5. Checkout an existing branch.</a></li>
+<li><a href="#org108996f">6.2.6. Merge two branches</a></li>
+<li><a href="#org7f7a2e1">6.2.7. <span class="todo TODO">TODO</span> Resolving conflicts</a></li>
+<li><a href="#org8985cd8">6.2.8. Fetching</a></li>
+<li><a href="#org605ba36">6.2.9. Add a remote</a></li>
+<li><a href="#org64a04c3">6.2.10. Stashing</a></li>
+<li><a href="#orgc07d17e">6.2.11. Git blame</a></li>
+</ul>
+</li>
+<li><a href="#org34c8236">6.3. Advanced concepts</a>
+<ul>
+<li><a href="#org765ea6c">6.3.1. Resetting</a></li>
+<li><a href="#orga36bb4d">6.3.2. Rebasing</a></li>
+<li><a href="#org690ccdc">6.3.3. Create patches</a></li>
+<li><a href="#orgdae2f28">6.3.4. Cherry-picking</a></li>
+<li><a href="#org8e4ae86">6.3.5. Apply patches</a></li>
+<li><a href="#org93ba78a">6.3.6. Notes about commits</a></li>
+<li><a href="#org9ef023b">6.3.7. Cherry-picking</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org1c2cc34">7. <span class="todo TODO">TODO</span> Test</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org01ab6d3" class="outline-2">
-<h2 id="org01ab6d3"><span class="section-number-2">1</span> Primer</h2>
+<div id="outline-container-org4695a53" class="outline-2">
+<h2 id="org4695a53"><span class="section-number-2">1</span> Primer</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org39b770f" class="outline-3">
-<h3 id="org39b770f"><span class="section-number-3">1.1</span> What is Version Control</h3>
+<div id="outline-container-org331f363" class="outline-3">
+<h3 id="org331f363"><span class="section-number-3">1.1</span> What is Version Control</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Version control systems are a category of software tools that help a software team manage changes to source code over time. Version control software keeps track of every modification to the code in a special kind of database. If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix the mistake while minimizing disruption to all team members.
@@ -365,21 +372,21 @@ Version control software is an essential part of the every-day of the modern sof
 </p>
 </div>
 </div>
-<div id="outline-container-org1d49ef0" class="outline-3">
-<h3 id="org1d49ef0"><span class="section-number-3">1.2</span> Team Work</h3>
+<div id="outline-container-orga6eebd6" class="outline-3">
+<h3 id="orga6eebd6"><span class="section-number-3">1.2</span> Team Work</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-orge075c6b" class="outline-4">
-<h4 id="orge075c6b"><span class="section-number-4">1.2.1</span> centralized &amp; distributed</h4>
+<div id="outline-container-org8265183" class="outline-4">
+<h4 id="org8265183"><span class="section-number-4">1.2.1</span> centralized &amp; distributed</h4>
 </div>
 </div>
 </div>
-<div id="outline-container-org80a696b" class="outline-2">
-<h2 id="org80a696b"><span class="section-number-2">2</span> Git Introduction</h2>
+<div id="outline-container-org8295303" class="outline-2">
+<h2 id="org8295303"><span class="section-number-2">2</span> Git Introduction</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org383e3e2" class="outline-3">
-<h3 id="org383e3e2"><span class="section-number-3">2.1</span> What is Git</h3>
+<div id="outline-container-orgca2e623" class="outline-3">
+<h3 id="orgca2e623"><span class="section-number-3">2.1</span> What is Git</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 <a href="https:/en.wikipedia.org">Git</a> is a distributed version-control system for tracking changes in source code during software development. 
@@ -389,19 +396,19 @@ Git is free and open-source software distributed under the terms of the GNU Gene
 </p>
 </div>
 
-<div id="outline-container-org45a5d36" class="outline-4">
-<h4 id="org45a5d36"><span class="section-number-4">2.1.1</span> Performance</h4>
+<div id="outline-container-org7058209" class="outline-4">
+<h4 id="org7058209"><span class="section-number-4">2.1.1</span> Performance</h4>
 </div>
-<div id="outline-container-orgf54216d" class="outline-4">
-<h4 id="orgf54216d"><span class="section-number-4">2.1.2</span> Security</h4>
+<div id="outline-container-org6011bab" class="outline-4">
+<h4 id="org6011bab"><span class="section-number-4">2.1.2</span> Security</h4>
 </div>
-<div id="outline-container-org3342f24" class="outline-4">
-<h4 id="org3342f24"><span class="section-number-4">2.1.3</span> Flexibility</h4>
+<div id="outline-container-org20ec1c0" class="outline-4">
+<h4 id="org20ec1c0"><span class="section-number-4">2.1.3</span> Flexibility</h4>
 </div>
 </div>
 
-<div id="outline-container-org72f0d14" class="outline-3">
-<h3 id="org72f0d14"><span class="section-number-3">2.2</span> History</h3>
+<div id="outline-container-org3cfee36" class="outline-3">
+<h3 id="org3cfee36"><span class="section-number-3">2.2</span> History</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Git was created by Linus Torvalds in 2005 for development of the Linux kernel, with other kernel developers contributing to its initial development. Its current maintainer since 2005 is Junio Hamano.
@@ -409,15 +416,15 @@ Git was created by Linus Torvalds in 2005 for development of the Linux kernel, w
 </div>
 </div>
 
-<div id="outline-container-org797132a" class="outline-3">
-<h3 id="org797132a"><span class="section-number-3">2.3</span> Culture</h3>
+<div id="outline-container-org2136df3" class="outline-3">
+<h3 id="org2136df3"><span class="section-number-3">2.3</span> Culture</h3>
 </div>
-<div id="outline-container-org55815e3" class="outline-3">
-<h3 id="org55815e3"><span class="section-number-3">2.4</span> Installation of Git</h3>
+<div id="outline-container-org865e47b" class="outline-3">
+<h3 id="org865e47b"><span class="section-number-3">2.4</span> Installation of Git</h3>
 <div class="outline-text-3" id="text-2-4">
 </div>
-<div id="outline-container-orgfeae9cf" class="outline-4">
-<h4 id="orgfeae9cf"><span class="section-number-4">2.4.1</span> Install Git on Mac OS X</h4>
+<div id="outline-container-org874497e" class="outline-4">
+<h4 id="org874497e"><span class="section-number-4">2.4.1</span> Install Git on Mac OS X</h4>
 <div class="outline-text-4" id="text-2-4-1">
 <p>
 There are several ways to install Git on a Mac. In fact, if you've installed XCode (or it's Command Line Tools), Git may already be installed. To find out, open a terminal and enter git &#x2013;version.
@@ -438,8 +445,8 @@ the latest <a href="https://sourceforge.net/projects/git-osx-installer/files/">G
 </div>
 </div>
 </div>
-<div id="outline-container-org1ae0c6c" class="outline-4">
-<h4 id="org1ae0c6c"><span class="section-number-4">2.4.2</span> Install Git on Windows</h4>
+<div id="outline-container-orgebc4774" class="outline-4">
+<h4 id="orgebc4774"><span class="section-number-4">2.4.2</span> Install Git on Windows</h4>
 <div class="outline-text-4" id="text-2-4-2">
 <p>
 The latest Git for <a href="https://gitforwindows.org/">Windows installe</a>.
@@ -447,8 +454,8 @@ The latest Git for <a href="https://gitforwindows.org/">Windows installe</a>.
 </div>
 </div>
 
-<div id="outline-container-org0ce9641" class="outline-4">
-<h4 id="org0ce9641"><span class="section-number-4">2.4.3</span> Install Git on Linux</h4>
+<div id="outline-container-org7006d10" class="outline-4">
+<h4 id="org7006d10"><span class="section-number-4">2.4.3</span> Install Git on Linux</h4>
 <div class="outline-text-4" id="text-2-4-3">
 <ul class="org-ul">
 <li>Debian / Ubuntu</li>
@@ -460,26 +467,28 @@ sudo apt-get install git
 </div>
 </div>
 </div>
-<div id="outline-container-orgc256548" class="outline-4">
-<h4 id="orgc256548"><span class="section-number-4">2.4.4</span> Configure your Git username and email</h4>
+<div id="outline-container-orgbff57fd" class="outline-4">
+<h4 id="orgbff57fd"><span class="section-number-4">2.4.4</span> Configure your Git username and email</h4>
 <div class="outline-text-4" id="text-2-4-4">
 <p>
 Configure your Git username and email using the following commands, replacing "Your name" with your own. These details will be associated with any commits that you create:
-#+BEGIN<sub>SRC</sub> sh
-git config &#x2013;global user.name "Your name"
-git config &#x2013;global user.email "Your email address"
-#+END<sub>SRCho</sub>
 </p>
+<div class="org-src-container">
+<pre class="src src-shell">git config --global user.name <span style="color: #E6DB74;">"Your name"</span>
+git config --global user.email <span style="color: #E6DB74;">"Your email address"</span>
+</pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org24c5bd4" class="outline-2">
-<h2 id="org24c5bd4"><span class="section-number-2">3</span> Getting Started</h2>
+</div>
+
+<div id="outline-container-orgfd59ded" class="outline-2">
+<h2 id="orgfd59ded"><span class="section-number-2">3</span> Getting Started</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org1aeccdc" class="outline-3">
-<h3 id="org1aeccdc"><span class="section-number-3">3.1</span> Basic settings</h3>
+<div id="outline-container-org3aee8e6" class="outline-3">
+<h3 id="org3aee8e6"><span class="section-number-3">3.1</span> Basic settings</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 $ git config &#x2013;global user.name "Your Name"
@@ -488,8 +497,8 @@ $ git config &#x2013;global user.email "youremail@example.com"
 </div>
 </div>
 
-<div id="outline-container-org3eecacf" class="outline-3">
-<h3 id="org3eecacf"><span class="section-number-3">3.2</span> Initialize a repository</h3>
+<div id="outline-container-org4400e63" class="outline-3">
+<h3 id="org4400e63"><span class="section-number-3">3.2</span> Initialize a repository</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>create a folder for testing</li>
@@ -643,8 +652,8 @@ nothing to commit, working tree clean
 </div>
 </div>
 </div>
-<div id="outline-container-orgab8d06e" class="outline-2">
-<h2 id="orgab8d06e"><span class="section-number-2">4</span> Remote Repository at GitHub</h2>
+<div id="outline-container-org6b79b4a" class="outline-2">
+<h2 id="org6b79b4a"><span class="section-number-2">4</span> Remote Repository at GitHub</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-shell">ssh-keygen -t rsa -c <span style="color: #E6DB74;">"youremail@example.com"</span>
@@ -657,30 +666,150 @@ You could find a directory .ssh in your home folder. id<sub>rsa</sub> and <b>id<
 </div>
 </div>
 
-<div id="outline-container-org71b8c29" class="outline-2">
-<h2 id="org71b8c29"><span class="section-number-2">5</span> Advanced Topic</h2>
+<div id="outline-container-org4ab79ae" class="outline-2">
+<h2 id="org4ab79ae"><span class="section-number-2">5</span> Advanced Topic</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org07a41df" class="outline-3">
-<h3 id="org07a41df"><span class="section-number-3">5.1</span> Brench Management</h3>
+<div id="outline-container-org4d6fd3b" class="outline-3">
+<h3 id="org4d6fd3b"><span class="section-number-3">5.1</span> Branch Management</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Compared with SVN, one of the specific features Git has is about branch. 
+</p>
+
+<p>
+Teamwork in the real project development will benifit from the feature of branch. In this tutorial, the followings will be introduced:
+</p>
+<ul class="org-ul">
+<li>what is a branch</li>
+<li>The main branch operations</li>
+<li>how to achieve effective teamwork by through branch management</li>
+</ul>
 </div>
-<div id="outline-container-org3c2dff9" class="outline-3">
-<h3 id="org3c2dff9"><span class="section-number-3">5.2</span> Bookmark Management</h3>
+
+<div id="outline-container-org24bd6e2" class="outline-4">
+<h4 id="org24bd6e2"><span class="section-number-4">5.1.1</span> What is a branch</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<p>
+“A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch name in Git is master. As you initially make commits, you're given a master branch that points to the last commit you made. Every time you commit, it moves forward automatically.”
+</p>
 </div>
-<div id="outline-container-orge2c870f" class="outline-3">
-<h3 id="orge2c870f"><span class="section-number-3">5.3</span> Customization</h3>
+</div>
+
+<div id="outline-container-org8163b36" class="outline-4">
+<h4 id="org8163b36"><span class="section-number-4">5.1.2</span> Common operations of branches</h4>
+<div class="outline-text-4" id="text-5-1-2">
+<ul class="org-ul">
+<li>Creat a new branch based on the current branch</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell">git branch develop
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Swith to the new branch</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell">git checkout develop
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>one step to create and switch to a new branch develop</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell">git checkout -b develop
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Push the created branch to github</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell">git push origin develop
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Check the local branches</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell">git branch
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Check the remot branches</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell">git branch -r
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Delete a local branch named develop</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell">git branch -d develop
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Delete a remote branch named develop</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell">git push origin :develop
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Fetch a remote branch to local</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell">git checkout develop origin/develop
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Fetch a remote branch to local and switch to this branch</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell">git checkout -b develop origin/develop
+</pre>
 </div>
 </div>
-<div id="outline-container-orgb3d6951" class="outline-2">
-<h2 id="orgb3d6951"><span class="section-number-2">6</span> Magit Tutorial</h2>
+</div>
+
+<div id="outline-container-org6f752f3" class="outline-4">
+<h4 id="org6f752f3"><span class="section-number-4">5.1.3</span> <span class="todo TODO">TODO</span> Git Flow, teamwork based on branches</h4>
+<div class="outline-text-4" id="text-5-1-3">
+<p>
+<a href="git-model.png">A successful Git branching model</a>
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org5f330ad" class="outline-3">
+<h3 id="org5f330ad"><span class="section-number-3">5.2</span> Bookmark Management</h3>
+</div>
+<div id="outline-container-org1312baa" class="outline-3">
+<h3 id="org1312baa"><span class="section-number-3">5.3</span> Customization</h3>
+</div>
+</div>
+<div id="outline-container-org17dc4b4" class="outline-2">
+<h2 id="org17dc4b4"><span class="section-number-2">6</span> Magit Tutorial</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgcf2ad4e" class="outline-3">
-<h3 id="orgcf2ad4e"><span class="section-number-3">6.1</span> Basic magit</h3>
+<div id="outline-container-orgaec9901" class="outline-3">
+<h3 id="orgaec9901"><span class="section-number-3">6.1</span> Basic magit</h3>
 <div class="outline-text-3" id="text-6-1">
 </div>
-<div id="outline-container-org47c46d4" class="outline-4">
-<h4 id="org47c46d4"><span class="section-number-4">6.1.1</span> Create a git repo</h4>
+<div id="outline-container-org72d4cf6" class="outline-4">
+<h4 id="org72d4cf6"><span class="section-number-4">6.1.1</span> Create a git repo</h4>
 <div class="outline-text-4" id="text-6-1-1">
 <p>
 <a href="magit.html#Repository-setup">info:magit#Repository setup</a>
@@ -698,8 +827,8 @@ You can create a git repo with M-x magit-init. This will create a git-repo in th
 </div>
 </div>
 
-<div id="outline-container-orgea2b803" class="outline-4">
-<h4 id="orgea2b803"><span class="section-number-4">6.1.2</span> Clone a repo</h4>
+<div id="outline-container-org97df045" class="outline-4">
+<h4 id="org97df045"><span class="section-number-4">6.1.2</span> Clone a repo</h4>
 <div class="outline-text-4" id="text-6-1-2">
 <p>
 <a href="magit.html#Repository-setup">info:magit#Repository setup</a>
@@ -719,8 +848,8 @@ This will prompt you for a repo, which is either a url, or a path, and a path to
 </div>
 </div>
 
-<div id="outline-container-org66b2127" class="outline-4">
-<h4 id="org66b2127"><span class="section-number-4">6.1.3</span> Check the status of your repo</h4>
+<div id="outline-container-org4eaef81" class="outline-4">
+<h4 id="org4eaef81"><span class="section-number-4">6.1.3</span> Check the status of your repo</h4>
 <div class="outline-text-4" id="text-6-1-3">
 <p>
 <a href="magit.html#Status-buffer">info:magit#Status buffer</a>
@@ -744,8 +873,8 @@ press "n" (next) or "p" (previous) to navigate in this window.
 </div>
 </div>
 
-<div id="outline-container-orgb49fc06" class="outline-4">
-<h4 id="orgb49fc06"><span class="section-number-4">6.1.4</span> Stage a file</h4>
+<div id="outline-container-org8d9b150" class="outline-4">
+<h4 id="org8d9b150"><span class="section-number-4">6.1.4</span> Stage a file</h4>
 <div class="outline-text-4" id="text-6-1-4">
 <p>
 <a href="magit.html#Staging-and-unstaging">info:magit#Staging and unstaging</a>
@@ -765,8 +894,8 @@ You can unstage a file with "u"
 </div>
 </div>
 
-<div id="outline-container-org960e2fa" class="outline-4">
-<h4 id="org960e2fa"><span class="section-number-4">6.1.5</span> Commit a file</h4>
+<div id="outline-container-orgaab9d9c" class="outline-4">
+<h4 id="orgaab9d9c"><span class="section-number-4">6.1.5</span> Commit a file</h4>
 <div class="outline-text-4" id="text-6-1-5">
 <p>
 <a href="magit.html#Initiating-a-commit">info:magit#Initiating a commit</a>
@@ -782,8 +911,8 @@ In the magit-status window with some files that are staged, press "c", review th
 </div>
 </div>
 
-<div id="outline-container-orge25c739" class="outline-4">
-<h4 id="orge25c739"><span class="section-number-4">6.1.6</span> Diffs</h4>
+<div id="outline-container-org7320503" class="outline-4">
+<h4 id="org7320503"><span class="section-number-4">6.1.6</span> Diffs</h4>
 <div class="outline-text-4" id="text-6-1-6">
 <p>
 <a href="magit.html#Diffing">info:magit#Diffing</a>
@@ -795,8 +924,8 @@ From the magit-status window, press "d" then "d" to see what has changed.
 </div>
 </div>
 
-<div id="outline-container-orgaa6d1f3" class="outline-4">
-<h4 id="orgaa6d1f3"><span class="section-number-4">6.1.7</span> See the log</h4>
+<div id="outline-container-org7294b63" class="outline-4">
+<h4 id="org7294b63"><span class="section-number-4">6.1.7</span> See the log</h4>
 <div class="outline-text-4" id="text-6-1-7">
 <p>
 <a href="magit.html#Logging">info:magit#Logging</a>
@@ -812,8 +941,8 @@ If you want to see only the commits that affected a file, in the magit-status wi
 </div>
 </div>
 
-<div id="outline-container-org74b661d" class="outline-4">
-<h4 id="org74b661d"><span class="section-number-4">6.1.8</span> Push</h4>
+<div id="outline-container-orgd4541e9" class="outline-4">
+<h4 id="orgd4541e9"><span class="section-number-4">6.1.8</span> Push</h4>
 <div class="outline-text-4" id="text-6-1-8">
 <p>
 <a href="magit.html#Pushing">info:magit#Pushing</a>
@@ -829,8 +958,8 @@ Note that tags don't normally get pushed, but there are options ("T" to push a t
 </div>
 </div>
 
-<div id="outline-container-orgcf66186" class="outline-4">
-<h4 id="orgcf66186"><span class="section-number-4">6.1.9</span> Pull</h4>
+<div id="outline-container-org09adac3" class="outline-4">
+<h4 id="org09adac3"><span class="section-number-4">6.1.9</span> Pull</h4>
 <div class="outline-text-4" id="text-6-1-9">
 <p>
 <a href="magit.html#Pulling">info:magit#Pulling</a>
@@ -839,8 +968,8 @@ In the magit-status window press "F" then "p".
 </div>
 </div>
 
-<div id="outline-container-org3dddcb6" class="outline-4">
-<h4 id="org3dddcb6"><span class="section-number-4">6.1.10</span> Run a command-line git command manually</h4>
+<div id="outline-container-orgccf6c0b" class="outline-4">
+<h4 id="orgccf6c0b"><span class="section-number-4">6.1.10</span> Run a command-line git command manually</h4>
 <div class="outline-text-4" id="text-6-1-10">
 <p>
 <a href="magit.html#Running-Git-manually">info:magit#Running Git manually</a>
@@ -849,8 +978,8 @@ In the magit-status window, type "!" to get the popup and choose what you want t
 </div>
 </div>
 
-<div id="outline-container-org070e31f" class="outline-4">
-<h4 id="org070e31f"><span class="section-number-4">6.1.11</span> Check the output of the git command</h4>
+<div id="outline-container-org3c89d6f" class="outline-4">
+<h4 id="org3c89d6f"><span class="section-number-4">6.1.11</span> Check the output of the git command</h4>
 <div class="outline-text-4" id="text-6-1-11">
 <p>
 Press "$"
@@ -858,8 +987,8 @@ Press "$"
 </div>
 </div>
 
-<div id="outline-container-org734d338" class="outline-4">
-<h4 id="org734d338"><span class="section-number-4">6.1.12</span> Keybindings</h4>
+<div id="outline-container-orgc444a07" class="outline-4">
+<h4 id="orgc444a07"><span class="section-number-4">6.1.12</span> Keybindings</h4>
 <div class="outline-text-4" id="text-6-1-12">
 <p>
 <a href="magit.html#Keystroke-Index">info:magit#Keystroke Index</a>
@@ -867,12 +996,12 @@ Press "$"
 </div>
 </div>
 </div>
-<div id="outline-container-orgda51ad7" class="outline-3">
-<h3 id="orgda51ad7"><span class="section-number-3">6.2</span> Intermediate concepts</h3>
+<div id="outline-container-orgeceb46c" class="outline-3">
+<h3 id="orgeceb46c"><span class="section-number-3">6.2</span> Intermediate concepts</h3>
 <div class="outline-text-3" id="text-6-2">
 </div>
-<div id="outline-container-org230b8fb" class="outline-4">
-<h4 id="org230b8fb"><span class="section-number-4">6.2.1</span> Checkout an older version of a file</h4>
+<div id="outline-container-orgaa2d9ea" class="outline-4">
+<h4 id="orgaa2d9ea"><span class="section-number-4">6.2.1</span> Checkout an older version of a file</h4>
 <div class="outline-text-4" id="text-6-2-1">
 <p>
 Use M-x magit-checkout-file select the branch, or enter a revision, and then choose a file.
@@ -889,16 +1018,16 @@ Use M-x magit-checkout-file select the branch, or enter a revision, and then cho
 </div>
 </div>
 
-<div id="outline-container-orgb36cf2f" class="outline-4">
-<h4 id="orgb36cf2f"><span class="section-number-4">6.2.2</span> Search the commit messages for a pattern</h4>
+<div id="outline-container-org2c9af85" class="outline-4">
+<h4 id="org2c9af85"><span class="section-number-4">6.2.2</span> Search the commit messages for a pattern</h4>
 <div class="outline-text-4" id="text-6-2-2">
 <p>
 In a magit-status window press "l =g" enter a pattern to grep for, and then press "l".
 </p>
 </div>
 </div>
-<div id="outline-container-orgc828044" class="outline-4">
-<h4 id="orgc828044"><span class="section-number-4">6.2.3</span> Revert a commit</h4>
+<div id="outline-container-orgb666486" class="outline-4">
+<h4 id="orgb666486"><span class="section-number-4">6.2.3</span> Revert a commit</h4>
 <div class="outline-text-4" id="text-6-2-3">
 <p>
 <a href="magit.html#Reverting">info:magit#Reverting</a>
@@ -909,8 +1038,8 @@ Got to the log, select the commit and type "V" then "V".
 </p>
 </div>
 </div>
-<div id="outline-container-org67d9474" class="outline-4">
-<h4 id="org67d9474"><span class="section-number-4">6.2.4</span> Tag a version</h4>
+<div id="outline-container-org05386e7" class="outline-4">
+<h4 id="org05386e7"><span class="section-number-4">6.2.4</span> Tag a version</h4>
 <div class="outline-text-4" id="text-6-2-4">
 <p>
 <a href="magit.html#Tagging">info:magit#Tagging</a>
@@ -921,8 +1050,8 @@ press "t" in the magit-status window. You can then create a tag, annotate it, de
 </p>
 </div>
 </div>
-<div id="outline-container-org48563c1" class="outline-4">
-<h4 id="org48563c1"><span class="section-number-4">6.2.5</span> Checkout an existing branch.</h4>
+<div id="outline-container-orgf45254b" class="outline-4">
+<h4 id="orgf45254b"><span class="section-number-4">6.2.5</span> Checkout an existing branch.</h4>
 <div class="outline-text-4" id="text-6-2-5">
 <p>
 <a href="magit.html#The-branch-popup">info:magit#The branch popup</a>
@@ -938,8 +1067,8 @@ To checkout a new branch, in the magit-status window press "b" then "c". Choose 
 </div>
 </div>
 
-<div id="outline-container-org820479e" class="outline-4">
-<h4 id="org820479e"><span class="section-number-4">6.2.6</span> Merge two branches</h4>
+<div id="outline-container-org108996f" class="outline-4">
+<h4 id="org108996f"><span class="section-number-4">6.2.6</span> Merge two branches</h4>
 <div class="outline-text-4" id="text-6-2-6">
 <p>
 <a href="magit.html#Merging">info:magit#Merging</a>
@@ -950,8 +1079,8 @@ In the magit-status window press "m", then "m" and select the branch to merge in
 </p>
 </div>
 </div>
-<div id="outline-container-org2124069" class="outline-4">
-<h4 id="org2124069"><span class="section-number-4">6.2.7</span> <span class="todo TODO">TODO</span> Resolving conflicts</h4>
+<div id="outline-container-org7f7a2e1" class="outline-4">
+<h4 id="org7f7a2e1"><span class="section-number-4">6.2.7</span> <span class="todo TODO">TODO</span> Resolving conflicts</h4>
 <div class="outline-text-4" id="text-6-2-7">
 <p>
 <a href="magit.html#Resolving-conflicts">info:magit#Resolving conflicts</a>
@@ -967,8 +1096,8 @@ On a file in a magit-status window, press "e" to enter the 3-window ediff view. 
 </div>
 </div>
 
-<div id="outline-container-orgdf3cc75" class="outline-4">
-<h4 id="orgdf3cc75"><span class="section-number-4">6.2.8</span> Fetching</h4>
+<div id="outline-container-org8985cd8" class="outline-4">
+<h4 id="org8985cd8"><span class="section-number-4">6.2.8</span> Fetching</h4>
 <div class="outline-text-4" id="text-6-2-8">
 <p>
 <a href="magit.html#Fetching">info:magit#Fetching</a>
@@ -980,8 +1109,8 @@ In the magit-status window press "f".
 </div>
 </div>
 
-<div id="outline-container-orgf781c59" class="outline-4">
-<h4 id="orgf781c59"><span class="section-number-4">6.2.9</span> Add a remote</h4>
+<div id="outline-container-org605ba36" class="outline-4">
+<h4 id="org605ba36"><span class="section-number-4">6.2.9</span> Add a remote</h4>
 <div class="outline-text-4" id="text-6-2-9">
 <p>
 <a href="magit.html#Remotes">info:magit#Remotes</a>
@@ -994,8 +1123,8 @@ then enter an alias, and the url.
 </div>
 </div>
 
-<div id="outline-container-org2d562af" class="outline-4">
-<h4 id="org2d562af"><span class="section-number-4">6.2.10</span> Stashing</h4>
+<div id="outline-container-org64a04c3" class="outline-4">
+<h4 id="org64a04c3"><span class="section-number-4">6.2.10</span> Stashing</h4>
 <div class="outline-text-4" id="text-6-2-10">
 <p>
 <a href="magit.html#Stashing">info:magit#Stashing</a>
@@ -1006,16 +1135,16 @@ Press "z" in the magit-status window
 </p>
 </div>
 </div>
-<div id="outline-container-org0f977bc" class="outline-4">
-<h4 id="org0f977bc"><span class="section-number-4">6.2.11</span> Git blame</h4>
+<div id="outline-container-orgc07d17e" class="outline-4">
+<h4 id="orgc07d17e"><span class="section-number-4">6.2.11</span> Git blame</h4>
 </div>
 </div>
-<div id="outline-container-org4be0a04" class="outline-3">
-<h3 id="org4be0a04"><span class="section-number-3">6.3</span> Advanced concepts</h3>
+<div id="outline-container-org34c8236" class="outline-3">
+<h3 id="org34c8236"><span class="section-number-3">6.3</span> Advanced concepts</h3>
 <div class="outline-text-3" id="text-6-3">
 </div>
-<div id="outline-container-orgd730d35" class="outline-4">
-<h4 id="orgd730d35"><span class="section-number-4">6.3.1</span> Resetting</h4>
+<div id="outline-container-org765ea6c" class="outline-4">
+<h4 id="org765ea6c"><span class="section-number-4">6.3.1</span> Resetting</h4>
 <div class="outline-text-4" id="text-6-3-1">
 <p>
 <a href="magit.html#Resetting">info:magit#Resetting</a>
@@ -1023,8 +1152,8 @@ Press "z" in the magit-status window
 </div>
 </div>
 
-<div id="outline-container-org138259b" class="outline-4">
-<h4 id="org138259b"><span class="section-number-4">6.3.2</span> Rebasing</h4>
+<div id="outline-container-orga36bb4d" class="outline-4">
+<h4 id="orga36bb4d"><span class="section-number-4">6.3.2</span> Rebasing</h4>
 <div class="outline-text-4" id="text-6-3-2">
 <p>
 <a href="magit.html#Rebasing">info:magit#Rebasing</a>
@@ -1032,7 +1161,7 @@ Press "z" in the magit-status window
 </div>
 
 <ol class="org-ol">
-<li><a id="org1fa1e05"></a>Interactve rebasing<br />
+<li><a id="org67f561d"></a>Interactve rebasing<br />
 <div class="outline-text-5" id="text-6-3-2-1">
 <p>
 Open the log, select the oldest commit you want to rebase on then press "r" and then "i". Use M-p and M-n to move commits around. Press "s" on any commits you want to squash into the commit above it. C-c C-c will start the commands.
@@ -1044,7 +1173,7 @@ From the magit-status on unpushed commits, you can also press "r" to get the reb
 </div>
 </li>
 
-<li><a id="orgcd31136"></a>Reword a commit message<br />
+<li><a id="org18c7e06"></a>Reword a commit message<br />
 <div class="outline-text-5" id="text-6-3-2-2">
 <p>
 "r w" allows you to reword the commit message.
@@ -1054,8 +1183,8 @@ From the magit-status on unpushed commits, you can also press "r" to get the reb
 </ol>
 </div>
 
-<div id="outline-container-org9da6daa" class="outline-4">
-<h4 id="org9da6daa"><span class="section-number-4">6.3.3</span> Create patches</h4>
+<div id="outline-container-org690ccdc" class="outline-4">
+<h4 id="org690ccdc"><span class="section-number-4">6.3.3</span> Create patches</h4>
 <div class="outline-text-4" id="text-6-3-3">
 <p>
 <a href="magit.html#Creating-and-sending-patches">info:magit#Creating and sending patches</a>
@@ -1071,8 +1200,8 @@ In magit-status window, press "W"
 </p>
 </div>
 </div>
-<div id="outline-container-org368867d" class="outline-4">
-<h4 id="org368867d"><span class="section-number-4">6.3.4</span> Cherry-picking</h4>
+<div id="outline-container-orgdae2f28" class="outline-4">
+<h4 id="orgdae2f28"><span class="section-number-4">6.3.4</span> Cherry-picking</h4>
 <div class="outline-text-4" id="text-6-3-4">
 <p>
 <a href="magit.html#Cherry-picking">info:magit#Cherry picking</a>
@@ -1084,8 +1213,8 @@ Press "A"
 </div>
 </div>
 
-<div id="outline-container-org9982f8e" class="outline-4">
-<h4 id="org9982f8e"><span class="section-number-4">6.3.5</span> Apply patches</h4>
+<div id="outline-container-org8e4ae86" class="outline-4">
+<h4 id="org8e4ae86"><span class="section-number-4">6.3.5</span> Apply patches</h4>
 <div class="outline-text-4" id="text-6-3-5">
 <p>
 <a href="magit.html#Applying-patches">info:magit#Applying patches</a>
@@ -1093,8 +1222,8 @@ Press "A"
 </div>
 </div>
 
-<div id="outline-container-orge1d0260" class="outline-4">
-<h4 id="orge1d0260"><span class="section-number-4">6.3.6</span> Notes about commits</h4>
+<div id="outline-container-org93ba78a" class="outline-4">
+<h4 id="org93ba78a"><span class="section-number-4">6.3.6</span> Notes about commits</h4>
 <div class="outline-text-4" id="text-6-3-6">
 <p>
 <a href="magit.html#Notes">info:magit#Notes</a>
@@ -1115,8 +1244,8 @@ A typical use of notes is to supplement a commit message without changing the
 </div>
 </div>
 
-<div id="outline-container-org5188ab3" class="outline-4">
-<h4 id="org5188ab3"><span class="section-number-4">6.3.7</span> Cherry-picking</h4>
+<div id="outline-container-org9ef023b" class="outline-4">
+<h4 id="org9ef023b"><span class="section-number-4">6.3.7</span> Cherry-picking</h4>
 <div class="outline-text-4" id="text-6-3-7">
 <p>
 <a href="magit.html#Cherry-picking">info:magit#Cherry picking</a>
@@ -1125,11 +1254,29 @@ A typical use of notes is to supplement a commit message without changing the
 </div>
 </div>
 </div>
+
+<div id="outline-container-org1c2cc34" class="outline-2">
+<h2 id="org1c2cc34"><span class="section-number-2">7</span> <span class="todo TODO">TODO</span> Test</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-13 Tue 18:00&gt;</span></span>
+</p>
+
+
+<p>
+This is a test drawer
+</p>
+
+<p>
+This is a test two
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2019-07-01 Mon</p>
 <p class="author">Author: Dr Yufeng Lin</p>
-<p class="date">Created: 2019-08-11 Sun 14:50</p>
+<p class="date">Created: 2019-08-15 Thu 09:22</p>
 <p class="creator">Emacs 25.2.2 (Org mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

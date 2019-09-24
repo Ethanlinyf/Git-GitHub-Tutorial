@@ -32,6 +32,7 @@ Software teams that do not use any form of version control often run into proble
 Version control software is an essential part of the every-day of the modern software team's professional practices. Individual software developers who are accustomed to working with a capable version control system in their teams typically recognize the incredible value version control also gives them even on small solo projects. Once accustomed to the powerful benefits of version control systems, many developers wouldn't consider working without it even for non-software projects.
 ** Team Work
 *** centralized & distributed
+
 * Git Introduction
 ** What is Git
 [[https:/en.wikipedia.org][Git]] is a distributed version-control system for tracking changes in source code during software development. 
@@ -187,7 +188,7 @@ On branch master
 nothing to commit, working tree clean
 * Remote Repository at GitHub
 #+BEGIN_SRC shell
-ssh-keygen -t rsa -c "youremail@example.com"
+ssh-keygen -t rsa -C "youremail@example.com"
 #+END_SRC
 
 You could find a directory .ssh in your home folder. id_rsa and *id_rsa.pub*
