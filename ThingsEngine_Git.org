@@ -285,6 +285,50 @@ git commit -m "AND simple"
 
 Switch to the master branch: 
 
+#+BEGIN_SRC shell
+$ git checkout master
+#+END_SRC
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+In the master branch, adjust the last line of readme.md as:
+"Creating a *new* branch is quick & simple."
+
+Then, commit it (readme.md in master branch)
+#+BEGIN_SRC 
+$ git add readme.txt 
+$ git commit -m "& simple"
+#+END_SRC
+[master 5dc6824] & simple
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+There is a new commit in each of develop and master branches.
+#+BEGIN_SRC shell
+$ git merge feature1
+#+END_SRC
+Auto-merging readme.txt
+CONFLICT (content): Merge conflict in readme.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+You can check the conflict by using git status: 
+#+BEGIN_SRC shell
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+#+END_SRC
 
 
 *** TODO Git Flow, teamwork based on branches
