@@ -221,12 +221,6 @@ git checkout develop
 #+BEGIN_SRC shell
 git checkout -b develop
 #+END_SRC
-
-- Push the created branch to github
-#+BEGIN_SRC shell
-git push origin develop
-#+END_SRC
-
 - Check the local branches
 #+BEGIN_SRC shell
 git branch
@@ -235,6 +229,37 @@ git branch
 - Check the remot branches
 #+BEGIN_SRC shell
 git branch -r
+#+END_SRC
+
+Commit the readme.txt with add a new line:
+"Creating a new branch is quick."
+#+BEGIN_SRC 
+$ git add readme.txt 
+$ git commit -m "branch test"
+[dev b17d20e] branch test
+ 1 file changed, 1 insertion(+)
+#+END_SRC
+
+- Push the created branch to github
+#+BEGIN_SRC shell
+git push origin develop
+#+END_SRC
+
+Then, switch to master branch
+
+#+BEGIN_SRC 
+$ git checkout master
+Switched to branch 'master'
+#+END_SRC
+
+Then, merge what you have done in develop branch in to master branch: 
+
+#+BEGIN_SRC 
+$ git merge dev
+Updating d46f35e..b17d20e
+Fast-forward
+ readme.txt | 1 +
+ 1 file changed, 1 insertion(+)
 #+END_SRC
 
 - Delete a local branch named develop
@@ -377,8 +402,13 @@ Deleted branch feature1 (was 14096d0).
 #+END_SRC
 *** TODO Branch management strategy
 [[file:git-model.png][A successful Git branching model]]
-
+*** TODO the branch of bugs
+   SCHEDULED: <2019-10-01 Tue 13:30>
+*** TODO the branch of features
+   SCHEDULED: <2019-10-01 Tue 13:30>
 ** Bookmark Management
+
+
 ** Customization
 * Magit Tutorial
 ** Basic magit
