@@ -330,6 +330,20 @@ Unmerged paths:
 no changes added to commit (use "git add" and/or "git commit -a")
 #+END_SRC
 
+We can check the readme.txt file, as the follows: 
+
+#+BEGIN_SRC 
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+Git has a mutable index called stage.
+Git tracks changes of files.
+<<<<<<< HEAD
+Creating a new branch is quick & simple.
+=======
+Creating a new branch is quick AND simple.
+>>>>>>> feature1
+#+END_SRC
+
 Git uses <<<<<<<，=======，>>>>>>> to mark up the different contents in the different branches. 
 
 Open your favorite text editor, such as Emacs, and navigate to the file that has merge conflicts. You can adjust the readme.md as: 
@@ -340,19 +354,19 @@ Then, use "git log" to show how the branch has been merged.
 
 #+BEGIN_SRC shell 
 $ git log --graph --pretty=oneline --abbrev-commit
-*   cf810e4 (HEAD -> master) conflict fixed
+ *   cf810e4 (HEAD -> master) conflict fixed
 |\  
 | * 14096d0 (feature1) AND simple
-* | 5dc6824 & simple
+ * | 5dc6824 & simple
 |/  
-* b17d20e branch test
-* d46f35e (origin/master) remove test.txt
-* b84166e add test.txt
-* 519219b git tracks changes
-* e43a48b understand how stage works
-* 1094adb append GPL
-* e475afc add distributed
-* eaadf4e wrote a readme file
+ * b17d20e branch test
+ * d46f35e (origin/master) remove test.txt
+ * b84166e add test.txt
+ * 519219b git tracks changes
+ * e43a48b understand how stage works
+ * 1094adb append GPL
+ * e475afc add distributed
+ * eaadf4e wrote a readme file
 #+END_SRC
 
 In the final step, you can delete the feature_1 branch. 
@@ -363,10 +377,6 @@ Deleted branch feature1 (was 14096d0).
 #+END_SRC
 *** TODO Branch management strategy
 [[file:git-model.png][A successful Git branching model]]
-
-
-
-
 
 ** Bookmark Management
 ** Customization
