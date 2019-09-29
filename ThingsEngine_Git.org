@@ -255,7 +255,7 @@ Switched to branch 'master'
 Then, merge what you have done in develop branch in to master branch: 
 
 #+BEGIN_SRC 
-$ git merge dev
+$ git merge develop
 Updating d46f35e..b17d20e
 Fast-forward
  readme.txt | 1 +
@@ -400,15 +400,66 @@ In the final step, you can delete the feature_1 branch.
 $ git branch -d feature1
 Deleted branch feature1 (was 14096d0).
 #+END_SRC
-*** TODO Branch management strategy
+*** TODO Merge with a new commit
+When to merge from another branch, the git system normally uses "fast-forward" mode. Under this mode, once the branch is delete, the info of the branch will be also deleted. 
+
+This "fast forward" mode can be forced to be off, then, a new commit will be generated to record the info. of branch. 
+
+See the following practice using "git merge" with "--no-ff"
+#+BEGIN_SRC emacs lisp
+$ git checkout -b dev
+Switched to a new branch 'dev'
+#+END_SRC
+
+Adjust readme.txt, and commit it. 
+#+BEGIN_SRC shell
+$ git add readme.txt 
+$ git commit -m "add merge"
+[dev f52c633] add merge
+ 1 file changed, 1 insertion(+)
+#+END_SRC
+
+Then, switch to master: 
+#+BEGIN_SRC shell
+$ git checkout master
+Switched to branch 'master'
+#+END_SRC
+
+Merge the develop branch with "--no-ff" to prevent using the fast forward mode. 
+#+BEGIN_SRC shell
+$ git merge --no-ff -m "merge with no-ff" dev
+Merge made by the 'recursive' strategy.
+ readme.txt | 1 +
+ 1 file changed, 1 insertion(+)
+#+END_SRC
+
+In this merge, a new commit was created and can be checked by "git log":
+#+BEGIN_SRC shell
+$ git log --graph --pretty=oneline --abbrev-commit
+*   e1e9c68 (HEAD -> master) merge with no-ff
+|\  
+| * f52c633 (dev) add merge
+|/  
+*   cf810e4 conflict fixed
+...
+#+END_SRC
+
+This is the case how to merge without the fast forward mode. 
+
+*** Branch Management Strategy
 [[file:git-model.png][A successful Git branching model]]
+In real application development, we should follow the following basic rules to achieve branch management: 
+1. The master branch should be used for new version release;
+2. Developing activities on the develop branch
+3. Each user has it own branch. 
+
+So, a teamwork looks like the following diagram: 
+[[file:teamwork_strategy.png][Teamwork Branch Management Strategy]]
 *** TODO the branch of bugs
    SCHEDULED: <2019-10-01 Tue 13:30>
 *** TODO the branch of features
    SCHEDULED: <2019-10-01 Tue 13:30>
 ** Bookmark Management
-
-
 ** Customization
 * Magit Tutorial
 ** Basic magit
