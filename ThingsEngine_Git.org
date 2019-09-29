@@ -455,6 +455,10 @@ In real application development, we should follow the following basic rules to a
 So, a teamwork looks like the following diagram: 
 #+CAPTION: Branch Management for Teamwork
 #+NAME:   fig:SED-HR4049
+[[./teamwork_strategy.png]]
+
+
+
 [[file:teamwork_strategy.png][Teamwork Branch Management Strategy]]
 *** TODO the branch of bugs
    SCHEDULED: <2019-10-01 Tue 13:30>
