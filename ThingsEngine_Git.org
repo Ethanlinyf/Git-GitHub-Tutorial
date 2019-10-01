@@ -436,11 +436,11 @@ Merge made by the 'recursive' strategy.
 In this merge, a new commit was created and can be checked by "git log":
 #+BEGIN_SRC shell
 $ git log --graph --pretty=oneline --abbrev-commit
-*   e1e9c68 (HEAD -> master) merge with no-ff
+ *   e1e9c68 (HEAD -> master) merge with no-ff
 |\  
 | * f52c633 (dev) add merge
 |/  
-*   cf810e4 conflict fixed
+ *   cf810e4 conflict fixed
 ...
 #+END_SRC
 
@@ -448,6 +448,7 @@ This is the case how to merge without the fast forward mode.
 
 *** Branch Management Strategy
 [[file:git-model.png][A successful Git branching model]]
+
 In real application development, we should follow the following basic rules to achieve branch management: 
 1. The master branch should be used for new version release;
 2. Developing activities on the develop branch
@@ -457,11 +458,136 @@ So, a teamwork looks like the following diagram:
 #+NAME:   fig:SED-HR4049
 [[./teamwork_strategy.png]]
 
-
-
-[[file:teamwork_strategy.png][Teamwork Branch Management Strategy]]
 *** TODO the branch of bugs
    SCHEDULED: <2019-10-01 Tue 13:30>
+In the software development, bugs are very normal. To fix each bug, it is suggested to work on a new bug branch and once the bug is fixed, merge to the develop branch. Then, delete the created bug branch.
+
+For example, one receives a bug labeled by "c123" and you want to create a bug branch (issue-c123) to fix this issue. However, you are working on the branch "develop" and have not committed what you have been doing. 
+
+#+BEGIN_SRC shell
+$ git status
+On branch dev
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   hello.py
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   readme.txt
+#+END_SRC
+
+It is not because you don't want to commit what you have done. The work will need 1 day to complete and the urgent bug should be fix in 2 hours. 
+
+Git provides "stash" function. You can “storage” the current work site and wait for it to resume work after the scene is resumed. 
+
+#+BEGIN_SRC shell
+$git stash
+Saved working directory and index state WIP on dev: f52c633 add merge
+#+END_SRC
+
+Now, you can use "git status" to check the working directory and confirm it is clean. Then, a new branch can be created to fix the bug. You need to determine to create this branch from which branch, such as "master". 
+
+#+BEGIN_SRC shell
+$git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 6 commits.
+  (use "git push" to publish your local commits)
+
+$git checkout -b issue-C123
+Switched to a new branch 'issue-C123'
+#+END_SRC
+
+Now, fix the bug. Assume you correct "Git is free software ..." to "Git is a free software ...". Then, commit the adjustment. 
+#+BEGIN_SRC shell
+$git add readme.txt 
+$git commit -m "fix bug C123"
+[issue-101 4c805e2] fix bug C123
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+#+END_SRC
+
+After fixing the bug, complete to merge to master from the bug branch and delete this bug branch, issue-C123.
+#+BEGIN_SRC shell
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 6 commits.
+  (use "git push" to publish your local commits)
+
+$ git merge --no-ff -m "merged bug fix C123" issue-101
+Merge made by the 'recursive' strategy.
+ readme.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+#+END_SRC 
+
+Now, you can switch to the develop branch to continue the "storage" work.
+#+BEGIN_SRC shell
+$ git checkout dev
+Switched to branch 'dev'
+
+$ git status
+On branch dev
+nothing to commit, working tree clean
+#+END_SRC
+
+Check the saving work site: 
+#+BEGIN_SRC shell
+$ git stash list
+stash@{0}: WIP on dev: f52c633 add merge
+#+END_SRC
+
+Two ways to resume the work site:
+#+BEGIN_SRC shell
+$ git stash pop
+On branch dev
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   hello.py
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   readme.txt
+
+Dropped refs/stash@{0} (5d677e2ee266f39ea296182fb2354265b91b3b2a)
+#+END_SRC
+
+Using "git stash list" to check the saving working site. Nothing left. 
+#+BEGIN_SRC shell
+$git stash list
+#+END_SRC
+
+"stash" can be used several times and resume a stash by specifying it: 
+#+BEGIN_SRC shell
+$ git stash apply stash@{0}
+#+END_SRC
+
+Discussion: 
+- The bug in the master branch has been fixed. How about the same bug in the develop branch if the develop branch was created from the master branch which already had the bug?
+  + Redo to fix the bug in the develop branch. More efficient way? yes
+  + "Copy" (not merge) the commit "4c805e2 fix bug C123" to the develop branch. Git provides a command named "cherry-pick" to copy a specific commit to a branch: 
+    #+BEGIN_SRC shell
+    $ git branch
+      * develop
+       master
+    $ git cherry-pick 4c805e2
+    [master 1d4b803] fix bug 101
+      1 file changed, 1 insertion(+), 1 deletion(-)
+    #+END_SRC
+    4c805e2 and 1d4b803 are different commits and have the same contents/operations. Fix the bug in the development branch and copy to master? Yes, it works. 
+
+Conclusion: 
+- Fix each bug in a branch with a specific name
+- Before fixing, stash the working site with "git stash". After fixing, resume the working site with "git stash pop"
+- Fix in the master branch and apply to the develop branch by using "git cherry-pick <commit>".
+ 
+    
+
+
+
 *** TODO the branch of features
    SCHEDULED: <2019-10-01 Tue 13:30>
 ** Bookmark Management
@@ -657,3 +783,6 @@ This is a test drawer
 :Ans:
 This is a test two
 :END
+
+* Other topic
+** gitignore
