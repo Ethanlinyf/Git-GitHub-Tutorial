@@ -400,7 +400,7 @@ In the final step, you can delete the feature_1 branch.
 $ git branch -d feature1
 Deleted branch feature1 (was 14096d0).
 #+END_SRC
-*** TODO Merge with a new commit
+*** DONE Merge with a new commit
 When to merge from another branch, the git system normally uses "fast-forward" mode. Under this mode, once the branch is delete, the info of the branch will be also deleted. 
 
 This "fast forward" mode can be forced to be off, then, a new commit will be generated to record the info. of branch. 
@@ -458,7 +458,7 @@ So, a teamwork looks like the following diagram:
 #+NAME:   fig:SED-HR4049
 [[./teamwork_strategy.png]]
 
-*** TODO the branch of bugs
+*** DONE the branch of bugs
    SCHEDULED: <2019-10-01 Tue 13:30>
 In the software development, bugs are very normal. To fix each bug, it is suggested to work on a new bug branch and once the bug is fixed, merge to the develop branch. Then, delete the created bug branch.
 
@@ -583,13 +583,50 @@ Conclusion:
 - Fix each bug in a branch with a specific name
 - Before fixing, stash the working site with "git stash". After fixing, resume the working site with "git stash pop"
 - Fix in the master branch and apply to the develop branch by using "git cherry-pick <commit>".
- 
-    
-
-
-
 *** TODO the branch of features
    SCHEDULED: <2019-10-01 Tue 13:30>
+
+In the process of software development, new features may be added occasionally. Suggested to create a branch for creating each feature. 
+
+#+BEGIN_SRC shell
+$ git checkout -b feature-vulcan
+Switched to a new branch 'feature-vulcan'
+#+END_SRC
+
+Complete it: 
+
+#+BEGIN_SRC 
+$ git add vulcan.py
+
+$ git status
+On branch feature-vulcan
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   vulcan.py
+
+$ git commit -m "add feature vulcan"
+[feature-vulcan 287773e] add feature vulcan
+ 1 file changed, 2 insertions(+)
+ create mode 100644 vulcan.py
+#+END_SRC
+
+Then, switch back to the develop branch and ready to merge it into the develop branch. However, this feature is not accepted any more and you are requested to delete it because of the sensitive technologies used in this feature. 
+
+#+BEGIN_SRC shell
+$ git branch -d feature-vulcan
+error: The branch 'feature-vulcan' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D feature-vulcan'.
+#+END_SRC
+
+Because this branch "feature-vulcan" has not be merged, so need to force to delete it: 
+
+#+BEGIN_SRC shell
+$ git branch -D feature-vulcan
+Deleted branch feature-vulcan (was 287773e).
+#+END_SRC
+
+
 ** Bookmark Management
 ** Customization
 * Magit Tutorial
