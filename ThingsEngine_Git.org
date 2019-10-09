@@ -626,6 +626,163 @@ $ git branch -D feature-vulcan
 Deleted branch feature-vulcan (was 287773e).
 #+END_SRC
 
+*** Teamwork on GitHub
+How to build a teamwork through GitHub?
+As a local team member, how many branches you should push to GitHub? and What branches you should manage locally?
+
+When you clone a repository from GitHub, it will automatically set the local default master branch upstream to the remote one in GitHub, and the default remote branch is named as "origin". 
+
+Check the info. of the remote repository: 
+#+BEGIN_SRC shell
+$git remote
+origin
+#+END_SRC  
+
+You can also use “git remote -v” to check more details, sush as the fetch and push needed rights: 
+#+BEGIN_SRC shell
+$ git remote -v
+origin  git@github.com:michaelliao/learngit.git (fetch)
+origin  git@github.com:michaelliao/learngit.git (push)
+#+END_SRC
+
+- Push branches 
+Pushing branches means to push the committed files to the remote repository. The local repository should map to the remote one. The local default repository is origin which is mapping to the master in the remote one. 
+
+#+BEGIN_SRC shell
+$ git push origin master
+#+END_SRC
+
+When pushing, the local branch should be specified to the remote one, origin. Such as: 
+#+BEGIN_SRC shell
+git push origin master
+#+END_SRC
+
+For other branches, such as develop: 
+#+BEGIN_SRC shell
+git push origin develop
+#+END_SRC
+
+As we discussed working on many branches, such as master, develop, bug, feature branches, which need to be kept in local and which need to be pushed to the remote repository? 
+
+"master" and "develop" need to be pushed and for others, we normally work on locally and merger to "develop" and/or "master". The benefits to create some branches other than master and develop are for clear developing records and management. 
+
+- A  teamwork scenario for practice:
+
+  Working on a team, you will push to the master or develop branch in GitHub. Now, we simulate you start to work in a team.
+
+  Clone a repository in the GitHub: 
+
+  #+BEGIN_SRC shell
+  $ git clone git@github.com:Ethanlinyf/learngit.git
+  Cloning into 'learngit'...
+  remote: Counting objects: 40, done.
+  remote: Compressing objects: 100% (21/21), done.
+  remote: Total 40 (delta 14), reused 40 (delta 14), pack-reused 0
+  Receiving objects: 100% (40/40), done.
+  Resolving deltas: 100% (14/14), done.
+  #+END_SRC
+
+  Just the master branch is cloned in the local machine. You can use "git branch" to check:
+  #+BEGIN_SRC shell
+  $ git branch
+  * master
+  #+END_SRC
+
+  If you want to work on the branch develop, you need to create the develop branch and map to the remote develop branch in GitHub:
+  #+BEGIN_SRC shell
+  $ git checkout -b develop origin/dev
+  #+END_SRC
+
+  Then, you can work on the created branch, develop and push the commits to the remote one. 
+  #+BEGIN_SRC shell
+  $ git add env.txt
+
+  $ git commit -m "add env"
+  [dev 7a5e5dd] add env
+    1 file changed, 1 insertion(+)
+    create mode 100644 env.txt
+
+  $ git push origin dev
+  Counting objects: 3, done.
+  Delta compression using up to 4 threads.
+  Compressing objects: 100% (2/2), done.
+  Writing objects: 100% (3/3), 308 bytes | 308.00 KiB/s, done.
+  Total 3 (delta 0), reused 0 (delta 0)
+  To github.com:michaelliao/learngit.git
+     f52c633..7a5e5dd  dev -> dev
+  #+END_SRC
+
+  Your team partners may push their commits including the documents/codes before you are working on. And you may push want you have done to the repository in GitHub: 
+
+  #+BEGIN_SRC shell
+  $ cat env.txt
+  env
+
+  $ git add env.txt
+
+  $ git commit -m "add new env"
+  [dev 7bd91f1] add new env
+   1 file changed, 1 insertion(+)
+   create mode 100644 env.txt
+  $ git push origin dev
+   To github.com:michaelliao/learngit.git
+   ! [rejected]        dev -> dev (non-fast-forward)
+  error: failed to push some refs to 'git@github.Ethanlinyf/learngit.git'
+  hint: Updates were rejected because the tip of your current branch is behind
+  hint: its remote counterpart. Integrate the remote changes (e.g.
+  hint: 'git pull ...') before pushing again.
+  hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+  #+END_SRC
+
+  "error: failed to push some refs to" shows the pushing is not successful. The error requests you to solve the conflict as discussed before. But you need to checkout from the remote develop in GitHub. From the hint 'git pull ...', you can pull the latest commit for the develop branch in the GitHub, origin/develop:
+  #+BEGIN_SRC shell
+  $ git pull
+  There is no tracking information for the current branch.
+  Please specify which branch you want to merge with.
+  See git-pull(1) for details.
+
+      git pull <remote> <branch>
+  If you wish to set tracking information for this branch you can do so with:
+
+      git branch --set-upstream-to=origin/<branch> dev
+  #+END_SRC
+
+  It shows the pull is not successful. The reason is that you did not map the local develop branch to the remote one. From the hint, you can build the link for them: 
+  #+BEGIN_SRC shell
+  $ git branch --set-upstream-to=origin/dev dev
+  Branch 'dev' set up to track remote branch 'dev' from 'origin'.
+  #+END_SRC
+
+  Then, pull again: 
+  #+BEGIN_SRC 
+  $ git pull
+  Auto-merging env.txt
+  CONFLICT (add/add): Merge conflict in env.txt
+  Automatic merge failed; fix conflicts and then commit the result.
+  #+END_SRC
+
+  It shows you are successful to pull the latest version of the remote develop branch in GitHub and a conflict pops up, which needs you to manually resolve it, see the topic " Conflict resolution". The, commit and push to the remote develop branch:
+  #+BEGIN_SRC shell
+  $ git commit -m "fix env conflict"
+  [dev 57c53ab] fix env conflict
+
+  $ git push origin dev
+  Counting objects: 6, done.
+  Delta compression using up to 4 threads.
+  Compressing objects: 100% (4/4), done.
+  Writing objects: 100% (6/6), 621 bytes | 621.00 KiB/s, done.
+  Total 6 (delta 0), reused 0 (delta 0)
+  To github.com:michaelliao/learngit.git
+     7a5e5dd..57c53ab  dev -> dev
+  #+END_SRC
+
+In summary, the teamwork through GitHub can be concluded as follows:
+- git push origin <branch-name>
+- if not successful, it shows the remote one is newer than you fetched it before. git pull needed. 
+- if there are some conflicts after git pull, resolve them first and commit; if it shows "no tracking information", you need to map the local branch to the remote one. 
+- Then, re-push again
+
+This is how teamwork can be achieve through GitHub. 
 
 ** Bookmark Management
 ** Customization
