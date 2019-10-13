@@ -640,7 +640,7 @@ origin
 
 You can also use “git remote -v” to check more details, sush as the fetch and push needed rights: 
 #+BEGIN_SRC shell
-$ git remote -v
+~$ git remote -v
 origin  git@github.com:michaelliao/learngit.git (fetch)
 origin  git@github.com:michaelliao/learngit.git (push)
 #+END_SRC
@@ -783,6 +783,162 @@ In summary, the teamwork through GitHub can be concluded as follows:
 - Then, re-push again
 
 This is how teamwork can be achieve through GitHub. 
+
+*** Rebase
+In the previous discussion, we can see that it is easy to get conflicted when a team working on the same branch. Even no conflict there, you may need to pull first and merge to the one locally and then after your job, you just can push successfully. See the example: 
+#+BEGIN_SRC shell
+$ git log --graph --pretty=oneline --abbrev-commit
+ * d1be385 (HEAD -> master, origin/master) init hello
+ *   e5e69f1 Merge branch 'develop'
+ |\  
+ | *   57c53ab (origin/develop, develop) fix env conflict
+ | |\  
+ | | * 7a5e5dd add env
+ | * | 7bd91f1 add new env
+ | |/  
+ * |   12a631b merged bug fix 101
+ |\ \  
+ | * | 4c805e2 fix bug 101
+ |/ /  
+ * |   e1e9c68 merge with no-ff
+ |\ \  
+ | |/  
+ | * f52c633 add merge
+ |/  
+ *   cf810e4 conflict fixed
+#+END_SRC
+
+The records look mess. Is it possible to make the work flow clear? Yes, using "rebase"
+
+Let's have a look how to make forks become a clear line stream. 
+
+After synchronisation with the remote branch, two commits are attempted for the file "hello.py". 
+We use "$git log" to check the record:
+#+BEGIN_SRC shell
+$git log --graph --pretty=oneline --abbrev-commit
+ * 582d922 (HEAD -> master) add author
+ * 8875536 add comment
+ * d1be385 (origin/master) init hello
+ * e5e69f1 Merge branch 'develop'
+ |\  
+ | *   57c53ab (origin/dev, develop) fix env conflict
+ | |\  
+ | | * 7a5e5dd add env
+ | * | 7bd91f1 add new env
+...
+#+END_SRC  
+
+It shows the recent branch HEADs for the local master (HEAD -> master) and the remote one (origin/master) are "582d922 add author" and "d1be385 init hello". The local mast branch has two more commits than the remote one. 
+
+Now, we try to push the local master branch to the remote one. 
+#+BEGIN_SRC shell
+$ git push origin master
+To github.com:michaelliao/learngit.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:michaelliao/learngit.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+#+END_SRC
+
+It is rejected because other team members pushed to the remote master branch before. Then, you need to pull it first:
+#+BEGIN_SRC shell
+$ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:michaelliao/learngit
+   d1be385..f005ed4  master     -> origin/master
+ * [new tag]         v1.0       -> v1.0
+Auto-merging hello.py
+Merge made by the 'recursive' strategy.
+ hello.py | 1 +
+ 1 file changed, 1 insertion(+)
+#+END_SRC
+
+And check the status: 
+#+BEGIN_SRC Shell
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+#+END_SRC
+
+Now, there are 3 commits including merging the "hello.py" to the local branch ahead the remote one.   
+#+BEGIN_SRC 
+$ git log --graph --pretty=oneline --abbrev-commit
+ *   e0ea545 (HEAD -> master) Merge branch 'master' of github.com:michaelliao/learngit
+ |\  
+ | * f005ed4 (origin/master) set exit=1
+ * | 582d922 add author
+ * | 8875536 add comment
+ |/  
+ * d1be385 init hello
+ ...
+#+END_SRC
+
+Then, to make the work flow clear, "rebase" can be used: 
+#+BEGIN_SRC shell
+$ git rebase
+First, rewinding head to replay your work on top of it...
+Applying: add comment
+Using index info to reconstruct a base tree...
+M	hello.py
+Falling back to patching base and 3-way merge...
+Auto-merging hello.py
+Applying: add author
+Using index info to reconstruct a base tree...
+M	hello.py
+Falling back to patching base and 3-way merge...
+Auto-merging hello.py
+#+END_SRC
+
+How it works: 
+#+BEGIN_SRC shell
+$ git log --graph --pretty=oneline --abbrev-commit
+ * 7e61ed4 (HEAD -> master) add author
+ * 3611cfe add comment
+ * f005ed4 (origin/master) set exit=1
+ * d1be385 init hello
+...
+#+END_SRC
+
+It shows the forked record becomes a single log stream. How does it achieve? The local two commits are moved after the "f005ed4 (origin/master) set exit=1". After rebase operation, the contents are the same, except the commits changed to rebase "f005ed4 (origin/master) set exit=1", not "d1be385 init hello". However, after the commit "7e61ed4", the contents are the same.(What's the prons and cons of "rebase"?)
+#+BEGIN_SRC shell
+$ git push origin master
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 576 bytes | 576.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To github.com:michaelliao/learngit.git
+   f005ed4..7e61ed4  master -> master
+#+END_SRC
+
+You could check it by "git log":
+#+BEGIN_SRC shell
+$ git log --graph --pretty=oneline --abbrev-commit
+ * 7e61ed4 (HEAD -> master, origin/master) add author
+ * 3611cfe add comment
+ * f005ed4 set exit=1
+ * d1be385 init hello
+ ...
+#+END_SRC
+
+The remote record also become a straight work flow, not forked one. 
+
+Conclusion: 
+- The rebase operation is used to straighten out the commits from your teamwork. 
+- The main purpose of rebase operation is to rewrite the commit history in order to produce a straight, linear succession of commits.
+
+Reference: https://www.git-tower.com/learn/git/ebook/en/desktop-gui/advanced-topics/rebase#start
+
 
 ** Bookmark Management
 ** Customization
