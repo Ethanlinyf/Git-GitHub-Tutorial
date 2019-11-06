@@ -35,10 +35,8 @@ Version control software is an essential part of the every-day of the modern sof
 
 * Git Introduction
 ** What is Git
-[[https:/en.wikipedia.org][Git]] is a distributed version-control system for tracking changes in source code during software development. 
-It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. 
-Its goals include speed, data integrity, and support for distributed, non-linear workflows.
-Git is free and open-source software distributed under the terms of the GNU General Public License version 2.
+[[https:/en.wikipedia.org][Git]] is a modern version-control system for tracking changes in any set of computer files and coordinating work on those digital files among multiple people. Its goals include speed, data integrity, and support for distributed, non-linear workflows in teamwork. Git is released as free and open-source software distributed under the terms of the GNU General Public License version 2.
+
 
 *** Performance
 *** Security
