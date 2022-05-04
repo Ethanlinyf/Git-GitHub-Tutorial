@@ -1150,7 +1150,7 @@ Switched to a new branch 'version2'
 If you do this and make a commit, your version2 branch will be slightly different than your v2.0.0 tag since it will move forward with your new changes, so do be careful.
 
 ** Customization
-*** 
+*** TBD
 
 
 
@@ -1333,19 +1333,16 @@ If you do this and make a commit, your version2 branch will be slightly differen
 *** Cherry-picking 
  [[info:magit#Cherry%20picking][info:magit#Cherry picking]]
 
-* TODO Test
-  DEADLINE: <2019-08-13 Tue 19:00>
-<2019-08-13 Tue 18:00>
+* Tips
+- remove all files in the .gitignore
+  #+begin_src emacs-lisp
+    git rm -r --cached .
+    git add .
+    git commit -m 'Removed all files that are in the .gitignore'
+    git push origin master
+  #+end_src
 
-This is a test
 
-:ANSWER:
-This is a test drawer
-:END:
-
-:Ans:
-This is a test two
-:END
 
 * Other topic
 ** gitignore
