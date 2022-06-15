@@ -1,3 +1,4 @@
+
 #+TITLE: Git Tutorial
 #+DATE: 2019-07-01 Mon
 #+AUTHOR: Dr Yufeng Lin
@@ -1335,13 +1336,26 @@ If you do this and make a commit, your version2 branch will be slightly differen
 
 * Tips
 - remove all files in the .gitignore
-  #+begin_src emacs-lisp
+  #+begin_src shell
     git rm -r --cached .
     git add .
     git commit -m 'Removed all files that are in the .gitignore'
     git push origin master
   #+end_src
 
+- about submodule
+  + add a submodule:
+    #+begin_src shell
+      git submodule add <repository_path.git> [name of the adding submodule]
+    #+end_src
+
+  + remove a submodule:
+    1. git rm -f <path of the submodule>
+    2. rm -rf .git/moudle/<path of the submodule>
+    3. git config --remove-section submodule.<path-to-submodule>
+
+  if it is for the module update, you should comfirm the settings are also
+  updated. 
 
 
 * Other topic
