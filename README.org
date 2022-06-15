@@ -18,6 +18,9 @@
 
 * Primer
 ** What is Version Control
+#+CAPTION: A successful Git branching model
+#+NAME:   fig:branching model
+[[file:git-model.png]]
 Version control systems are a category of software tools that help a software team manage changes to source code over time. Version control software keeps track of every modification to the code in a special kind of database. If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix the mistake while minimizing disruption to all team members.
 
 For almost all software projects, the source code is like the crown jewels - a precious asset whose value must be protected. For most software teams, the source code is a repository of the invaluable knowledge and understanding about the problem domain that the developers have collected and refined through careful effort. Version control protects source code from both catastrophe and the casual degradation of human error and unintended consequences.
@@ -445,7 +448,6 @@ $ git log --graph --pretty=oneline --abbrev-commit
 This is the case how to merge without the fast forward mode. 
 
 *** Branch Management Strategy
-[[file:git-model.png][A successful Git branching model]]
 
 In real application development, we should follow the following basic rules to achieve branch management: 
 1. The master branch should be used for new version release;
