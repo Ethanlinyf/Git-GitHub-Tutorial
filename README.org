@@ -60,7 +60,7 @@ git --version
   the latest [[https://sourceforge.net/projects/git-osx-installer/files/][Git for Mac installer]].
 - Install Git with Homebrew
 #+BEGIN_SRC sh
-brew install git
+  brew install git
 #+END_SRC  
 *** Install Git on Windows
 The latest Git for [[https://gitforwindows.org/][Windows installe]].
@@ -68,14 +68,14 @@ The latest Git for [[https://gitforwindows.org/][Windows installe]].
 *** Install Git on Linux
 - Debian / Ubuntu
 #+BEGIN_SRC sh
-sudo apt-get update
-sudo apt-get install git
+  sudo apt-get update
+  sudo apt-get install git
 #+END_SRC
 *** Configure your Git username and email
 Configure your Git username and email using the following commands, replacing "Your name" with your own. These details will be associated with any commits that you create:
 #+BEGIN_SRC shell
-git config --global user.name "Your name"
-git config --global user.email "Your email address"
+  git config --global user.name "Your name"
+  git config --global user.email "Your email address"
 #+END_SRC
 
 * Getting Started
@@ -87,15 +87,15 @@ $ git config --global user.email "youremail@example.com"
 ** Initialize a repository
 - create a folder for testing
 #+BEGIN_SRC shell
-mkdir learngit
-cd learngit
-pwd 
+  mkdir learngit
+  cd learngit
+  pwd 
 #+END_SRC
 
 - initialize a repository
 
 #+BEGIN_SRC shell
-git init
+  git init
 #+END_SRC
 Initialized empty Git repository in /Users/ethanlin/Documents/ThingsEngine/ThingsEngine-Git/.git/
 
@@ -106,26 +106,26 @@ Git is free software." in readme.md
 - add and commit
 
 #+BEGIN_SRC shell
-git add readme.txt
+  git add readme.txt
 
-git commit -m "create a readme file"
+  git commit -m "create a readme file"
 #+END_SRC
 [master (root-commit) eaadf4e] wrote a readme file
- 1 file changed, 2 insertions(+)
- create mode 123456 readme.md
+1 file changed, 2 insertions(+)
+create mode 123456 readme.md
 
 - add more files
 #+BEGIN_SRC shell
-touch file1.txt file2.txt file3.txt
+  touch file1.txt file2.txt file3.txt
 #+END_SRC
 
 #+BEGIN_SRC shell
-git add file1.txt
-git add file2.txt file3.txt
+  git add file1.txt
+  git add file2.txt file3.txt
 #+END_SRC
 
 #+BEGIN_SRC shell
-git commit -m "add 3 files"
+  git commit -m "add 3 files"
 #+END_SRC
 
 - adjustment for readme.md
@@ -135,21 +135,21 @@ Git is free software."
 - git status
 
 #+BEGIN_SRC shell
-git status
+  git status
 #+END_SRC
 On branch master
 Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+(use "git add <file>..." to update what will be committed)
+(use "git checkout -- <file>..." to discard changes in working directory)
  
-	modified:   readme.txt
+modified:   readme.txt
  
 no changes added to commit (use "git add" and/or "git commit -a")
 
 - git diff
 
 #+BEGIN_SRC shell
-git diff readme.md
+  git diff readme.md
 #+END_SRC
 
 diff --git a/readme.md b/readme.md
@@ -159,28 +159,28 @@ index 46d49bf..9247db6 100644
 @@ -1,2 +1,2 @@
 -Git *is* a version control system.
 +Git *is* a distributed version control system.
- Git *is* free software.
+Git *is* free software.
 
 - update readme.md, new version
 
 #+BEGIN_SRC shell
-git add readme.md
+  git add readme.md
 #+END_SRC
 
 #+BEGIN_SRC shell
-git status
+  git status
 #+END_SRC
 On branch master
 Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+(use "git reset HEAD <file>..." to unstage)
  
-    modified:   readme.md
+modified:   readme.md
 
 #+BEGIN_SRC shell
-git commit -m "add distributed"
+  git commit -m "add distributed"
 #+END_SRC
 [master e475afc] add distributed
- 1 file changed, 1 insertion(+), 1 deletion(-)
+1 file changed, 1 insertion(+), 1 deletion(-)
 
 #+BEGIN_SRC 
 $ git status
@@ -189,7 +189,7 @@ On branch master
 nothing to commit, working tree clean
 * Remote Repository at GitHub
 #+BEGIN_SRC shell
-ssh-keygen -t rsa -C "youremail@example.com"
+  ssh-keygen -t rsa -C "youremail@example.com"
 #+END_SRC
 
 You could find a directory .ssh in your home folder. id_rsa and *id_rsa.pub*
@@ -210,26 +210,26 @@ Teamwork in the real project development will benifit from the feature of branch
 
 - Creat a new branch based on the current branch
 #+BEGIN_SRC shell
-git branch develop
+  git branch develop
 #+END_SRC
 
 - Swith to the new branch
 #+BEGIN_SRC shell
-git checkout develop
+  git checkout develop
 #+END_SRC
 
 - one step to create and switch to a new branch develop
 #+BEGIN_SRC shell
-git checkout -b develop
+  git checkout -b develop
 #+END_SRC
 - Check the local branches
 #+BEGIN_SRC shell
-git branch
+  git branch
 #+END_SRC
 
 - Check the remot branches
 #+BEGIN_SRC shell
-git branch -r
+  git branch -r
 #+END_SRC
 
 Commit the readme.txt with add a new line:
@@ -243,7 +243,7 @@ $ git commit -m "branch test"
 
 - Push the created branch to github
 #+BEGIN_SRC shell
-git push origin develop
+  git push origin develop
 #+END_SRC
 
 Then, switch to master branch
@@ -265,22 +265,22 @@ Fast-forward
 
 - Delete a local branch named develop
 #+BEGIN_SRC shell
-git branch -d develop
+  git branch -d develop
 #+END_SRC
 
 - Delete a remote branch named develop
 #+BEGIN_SRC shell
-git push origin :develop
+  git push origin :develop
 #+END_SRC
 
 - Fetch a remote branch to local
 #+BEGIN_SRC shell
-git checkout develop origin/develop
+  git checkout develop origin/develop
 #+END_SRC
 
 -  Fetch a remote branch to local and switch to this branch
 #+BEGIN_SRC shell
-git checkout -b develop origin/develop
+  git checkout -b develop origin/develop
 #+END_SRC
 
 *** Conflict resolution
@@ -292,7 +292,7 @@ Merge conflicts occur when competing changes are made to the same line of a file
 Create a new branch, such as feature_1. Then, 
 
 #+BEGIN_SRC shell
-$ git checkout -b feature_1
+  $ git checkout -b feature_1
 #+END_SRC
 Switched to a new branch 'feature_1'
 
@@ -307,16 +307,16 @@ git add readme.md
 git commit -m "AND simple"
 #+END_SRC
 [feature1 14096d0] AND simple
- 1 file changed, 1 insertion(+), 1 deletion(-)
+1 file changed, 1 insertion(+), 1 deletion(-)
 
 Switch to the master branch: 
 
 #+BEGIN_SRC shell
-$ git checkout master
+  $ git checkout master
 #+END_SRC
 Switched to branch 'master'
 Your branch is ahead of 'origin/master' by 1 commit.
-  (use "git push" to publish your local commits)
+(use "git push" to publish your local commits)
 
 In the master branch, adjust the last line of readme.md as:
 "Creating a *new* branch is quick & simple."
@@ -327,11 +327,11 @@ $ git add readme.txt
 $ git commit -m "& simple"
 #+END_SRC
 [master 5dc6824] & simple
- 1 file changed, 1 insertion(+), 1 deletion(-)
+1 file changed, 1 insertion(+), 1 deletion(-)
 
 There is a new commit in each of develop and master branches.
 #+BEGIN_SRC shell
-$ git merge feature1
+  $ git merge feature1
 #+END_SRC
 Auto-merging readme.txt
 CONFLICT (content): Merge conflict in readme.txt
@@ -339,21 +339,21 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 You can check the conflict by using git status: 
 #+BEGIN_SRC shell
-$ git status
-On branch master
-Your branch is ahead of 'origin/master' by 2 commits.
+  $ git status
+  On branch master
+  Your branch is ahead of 'origin/master' by 2 commits.
   (use "git push" to publish your local commits)
 
-You have unmerged paths.
+  You have unmerged paths.
   (fix conflicts and run "git commit")
   (use "git merge --abort" to abort the merge)
 
-Unmerged paths:
+  Unmerged paths:
   (use "git add <file>..." to mark resolution)
 
-	both modified:   readme.txt
+  both modified:   readme.txt
 
-no changes added to commit (use "git add" and/or "git commit -a")
+  no changes added to commit (use "git add" and/or "git commit -a")
 #+END_SRC
 
 We can check the readme.txt file, as the follows: 
@@ -379,27 +379,27 @@ Open your favorite text editor, such as Emacs, and navigate to the file that has
 Then, use "git log" to show how the branch has been merged. 
 
 #+BEGIN_SRC shell 
-$ git log --graph --pretty=oneline --abbrev-commit
- *   cf810e4 (HEAD -> master) conflict fixed
-|\  
-| * 14096d0 (feature1) AND simple
- * | 5dc6824 & simple
-|/  
- * b17d20e branch test
- * d46f35e (origin/master) remove test.txt
- * b84166e add test.txt
- * 519219b git tracks changes
- * e43a48b understand how stage works
- * 1094adb append GPL
- * e475afc add distributed
- * eaadf4e wrote a readme file
+  $ git log --graph --pretty=oneline --abbrev-commit
+  ,*   cf810e4 (HEAD -> master) conflict fixed
+      |\  
+      | * 14096d0 (feature1) AND simple
+      ,* | 5dc6824 & simple
+      |/  
+      ,* b17d20e branch test
+      ,* d46f35e (origin/master) remove test.txt
+      ,* b84166e add test.txt
+      ,* 519219b git tracks changes
+      ,* e43a48b understand how stage works
+      ,* 1094adb append GPL
+      ,* e475afc add distributed
+      ,* eaadf4e wrote a readme file
 #+END_SRC
 
 In the final step, you can delete the feature_1 branch. 
 
 #+BEGIN_SRC shell
-$ git branch -d feature1
-Deleted branch feature1 (was 14096d0).
+  $ git branch -d feature1
+  Deleted branch feature1 (was 14096d0).
 #+END_SRC
 *** Merge with a new commit
 When to merge from another branch, the git system normally uses "fast-forward" mode. Under this mode, once the branch is delete, the info of the branch will be also deleted. 
@@ -414,35 +414,35 @@ Switched to a new branch 'dev'
 
 Adjust readme.txt, and commit it. 
 #+BEGIN_SRC shell
-$ git add readme.txt 
-$ git commit -m "add merge"
-[dev f52c633] add merge
- 1 file changed, 1 insertion(+)
+  $ git add readme.txt 
+  $ git commit -m "add merge"
+  [dev f52c633] add merge
+  1 file changed, 1 insertion(+)
 #+END_SRC
 
 Then, switch to master: 
 #+BEGIN_SRC shell
-$ git checkout master
-Switched to branch 'master'
+  $ git checkout master
+  Switched to branch 'master'
 #+END_SRC
 
 Merge the develop branch with "--no-ff" to prevent using the fast forward mode. 
 #+BEGIN_SRC shell
-$ git merge --no-ff -m "merge with no-ff" dev
-Merge made by the 'recursive' strategy.
- readme.txt | 1 +
- 1 file changed, 1 insertion(+)
+  $ git merge --no-ff -m "merge with no-ff" dev
+  Merge made by the 'recursive' strategy.
+  readme.txt | 1 +
+  1 file changed, 1 insertion(+)
 #+END_SRC
 
 In this merge, a new commit was created and can be checked by "git log":
 #+BEGIN_SRC shell
-$ git log --graph --pretty=oneline --abbrev-commit
- *   e1e9c68 (HEAD -> master) merge with no-ff
-|\  
-| * f52c633 (dev) add merge
-|/  
- *   cf810e4 conflict fixed
-...
+  $ git log --graph --pretty=oneline --abbrev-commit
+  ,*   e1e9c68 (HEAD -> master) merge with no-ff
+      |\  
+      | * f52c633 (dev) add merge
+      |/  
+      ,*   cf810e4 conflict fixed
+      ...
 #+END_SRC
 
 This is the case how to merge without the fast forward mode. 
@@ -459,24 +459,24 @@ So, a teamwork looks like the following diagram:
 [[./teamwork_strategy.png]]
 
 *** the branch of bugs
-   SCHEDULED: <2019-10-01 Tue 13:30>
+SCHEDULED: <2019-10-01 Tue 13:30>
 In the software development, bugs are very normal. To fix each bug, it is suggested to work on a new bug branch and once the bug is fixed, merge to the develop branch. Then, delete the created bug branch.
 
 For example, one receives a bug labeled by "c123" and you want to create a bug branch (issue-c123) to fix this issue. However, you are working on the branch "develop" and have not committed what you have been doing. 
 
 #+BEGIN_SRC shell
-$ git status
-On branch dev
-Changes to be committed:
+  $ git status
+  On branch dev
+  Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-	new file:   hello.py
+  new file:   hello.py
 
-Changes not staged for commit:
+  Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   readme.txt
+  modified:   readme.txt
 #+END_SRC
 
 It is not because you don't want to commit what you have done. The work will need 1 day to complete and the urgent bug should be fix in 2 hours. 
@@ -484,85 +484,85 @@ It is not because you don't want to commit what you have done. The work will nee
 Git provides "stash" function. You can “storage” the current work site and wait for it to resume work after the scene is resumed. 
 
 #+BEGIN_SRC shell
-$git stash
-Saved working directory and index state WIP on dev: f52c633 add merge
+  $git stash
+  Saved working directory and index state WIP on dev: f52c633 add merge
 #+END_SRC
 
 Now, you can use "git status" to check the working directory and confirm it is clean. Then, a new branch can be created to fix the bug. You need to determine to create this branch from which branch, such as "master". 
 
 #+BEGIN_SRC shell
-$git checkout master
-Switched to branch 'master'
-Your branch is ahead of 'origin/master' by 6 commits.
+  $git checkout master
+  Switched to branch 'master'
+  Your branch is ahead of 'origin/master' by 6 commits.
   (use "git push" to publish your local commits)
 
-$git checkout -b issue-C123
-Switched to a new branch 'issue-C123'
+  $git checkout -b issue-C123
+  Switched to a new branch 'issue-C123'
 #+END_SRC
 
 Now, fix the bug. Assume you correct "Git is free software ..." to "Git is a free software ...". Then, commit the adjustment. 
 #+BEGIN_SRC shell
-$git add readme.txt 
-$git commit -m "fix bug C123"
-[issue-101 4c805e2] fix bug C123
- 1 file changed, 1 insertion(+), 1 deletion(-)
+  $git add readme.txt 
+  $git commit -m "fix bug C123"
+  [issue-101 4c805e2] fix bug C123
+  1 file changed, 1 insertion(+), 1 deletion(-)
 #+END_SRC
 
 After fixing the bug, complete to merge to master from the bug branch and delete this bug branch, issue-C123.
 #+BEGIN_SRC shell
-$ git checkout master
-Switched to branch 'master'
-Your branch is ahead of 'origin/master' by 6 commits.
+  $ git checkout master
+  Switched to branch 'master'
+  Your branch is ahead of 'origin/master' by 6 commits.
   (use "git push" to publish your local commits)
 
-$ git merge --no-ff -m "merged bug fix C123" issue-101
-Merge made by the 'recursive' strategy.
- readme.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+  $ git merge --no-ff -m "merged bug fix C123" issue-101
+  Merge made by the 'recursive' strategy.
+  readme.txt | 2 +-
+  1 file changed, 1 insertion(+), 1 deletion(-)
 #+END_SRC 
 
 Now, you can switch to the develop branch to continue the "storage" work.
 #+BEGIN_SRC shell
-$ git checkout dev
-Switched to branch 'dev'
+  $ git checkout dev
+  Switched to branch 'dev'
 
-$ git status
-On branch dev
-nothing to commit, working tree clean
+  $ git status
+  On branch dev
+  nothing to commit, working tree clean
 #+END_SRC
 
 Check the saving work site: 
 #+BEGIN_SRC shell
-$ git stash list
-stash@{0}: WIP on dev: f52c633 add merge
+  $ git stash list
+  stash@{0}: WIP on dev: f52c633 add merge
 #+END_SRC
 
 Two ways to resume the work site:
 #+BEGIN_SRC shell
-$ git stash pop
-On branch dev
-Changes to be committed:
+  $ git stash pop
+  On branch dev
+  Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-	new file:   hello.py
+  new file:   hello.py
 
-Changes not staged for commit:
+  Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   readme.txt
+  modified:   readme.txt
 
-Dropped refs/stash@{0} (5d677e2ee266f39ea296182fb2354265b91b3b2a)
+  Dropped refs/stash@{0} (5d677e2ee266f39ea296182fb2354265b91b3b2a)
 #+END_SRC
 
 Using "git stash list" to check the saving working site. Nothing left. 
 #+BEGIN_SRC shell
-$git stash list
+  $git stash list
 #+END_SRC
 
 "stash" can be used several times and resume a stash by specifying it: 
 #+BEGIN_SRC shell
-$ git stash apply stash@{0}
+  $ git stash apply stash@{0}
 #+END_SRC
 
 Discussion: 
@@ -570,11 +570,11 @@ Discussion:
   + Redo to fix the bug in the develop branch. More efficient way? yes
   + "Copy" (not merge) the commit "4c805e2 fix bug C123" to the develop branch. Git provides a command named "cherry-pick" to copy a specific commit to a branch: 
     #+BEGIN_SRC shell
-    $ git branch
-      * develop
-       master
-    $ git cherry-pick 4c805e2
-    [master 1d4b803] fix bug 101
+      $ git branch
+      ,* develop
+      master
+      $ git cherry-pick 4c805e2
+      [master 1d4b803] fix bug 101
       1 file changed, 1 insertion(+), 1 deletion(-)
     #+END_SRC
     4c805e2 and 1d4b803 are different commits and have the same contents/operations. Fix the bug in the development branch and copy to master? Yes, it works. 
@@ -584,13 +584,13 @@ Conclusion:
 - Before fixing, stash the working site with "git stash". After fixing, resume the working site with "git stash pop"
 - Fix in the master branch and apply to the develop branch by using "git cherry-pick <commit>".
 *** the branch of features
-   SCHEDULED: <2019-10-01 Tue 13:30>
+SCHEDULED: <2019-10-01 Tue 13:30>
 
 In the process of software development, new features may be added occasionally. Suggested to create a branch for creating each feature. 
 
 #+BEGIN_SRC shell
-$ git checkout -b feature-vulcan
-Switched to a new branch 'feature-vulcan'
+  $ git checkout -b feature-vulcan
+  Switched to a new branch 'feature-vulcan'
 #+END_SRC
 
 Complete it: 
@@ -614,16 +614,16 @@ $ git commit -m "add feature vulcan"
 Then, switch back to the develop branch and ready to merge it into the develop branch. However, this feature is not accepted any more and you are requested to delete it because of the sensitive technologies used in this feature. 
 
 #+BEGIN_SRC shell
-$ git branch -d feature-vulcan
-error: The branch 'feature-vulcan' is not fully merged.
-If you are sure you want to delete it, run 'git branch -D feature-vulcan'.
+  $ git branch -d feature-vulcan
+  error: The branch 'feature-vulcan' is not fully merged.
+  If you are sure you want to delete it, run 'git branch -D feature-vulcan'.
 #+END_SRC
 
 Because this branch "feature-vulcan" has not be merged, so need to force to delete it: 
 
 #+BEGIN_SRC shell
-$ git branch -D feature-vulcan
-Deleted branch feature-vulcan (was 287773e).
+  $ git branch -D feature-vulcan
+  Deleted branch feature-vulcan (was 287773e).
 #+END_SRC
 
 *** Teamwork on GitHub
@@ -634,32 +634,32 @@ When you clone a repository from GitHub, it will automatically set the local def
 
 Check the info. of the remote repository: 
 #+BEGIN_SRC shell
-$git remote
-origin
+  $git remote
+  origin
 #+END_SRC  
 
 You can also use “git remote -v” to check more details, sush as the fetch and push needed rights: 
 #+BEGIN_SRC shell
-~$ git remote -v
-origin  git@github.com:michaelliao/learngit.git (fetch)
-origin  git@github.com:michaelliao/learngit.git (push)
+  ~$ git remote -v
+  origin  git@github.com:michaelliao/learngit.git (fetch)
+  origin  git@github.com:michaelliao/learngit.git (push)
 #+END_SRC
 
 - Push branches 
 Pushing branches means to push the committed files to the remote repository. The local repository should map to the remote one. The local default repository is origin which is mapping to the master in the remote one. 
 
 #+BEGIN_SRC shell
-$ git push origin master
+  $ git push origin master
 #+END_SRC
 
 When pushing, the local branch should be specified to the remote one, origin. Such as: 
 #+BEGIN_SRC shell
-git push origin master
+  git push origin master
 #+END_SRC
 
 For other branches, such as develop: 
 #+BEGIN_SRC shell
-git push origin develop
+  git push origin develop
 #+END_SRC
 
 As we discussed working on many branches, such as master, develop, bug, feature branches, which need to be kept in local and which need to be pushed to the remote repository? 
@@ -673,84 +673,84 @@ As we discussed working on many branches, such as master, develop, bug, feature 
   Clone a repository in the GitHub: 
 
   #+BEGIN_SRC shell
-  $ git clone git@github.com:Ethanlinyf/learngit.git
-  Cloning into 'learngit'...
-  remote: Counting objects: 40, done.
-  remote: Compressing objects: 100% (21/21), done.
-  remote: Total 40 (delta 14), reused 40 (delta 14), pack-reused 0
-  Receiving objects: 100% (40/40), done.
-  Resolving deltas: 100% (14/14), done.
+    $ git clone git@github.com:Ethanlinyf/learngit.git
+    Cloning into 'learngit'...
+    remote: Counting objects: 40, done.
+    remote: Compressing objects: 100% (21/21), done.
+    remote: Total 40 (delta 14), reused 40 (delta 14), pack-reused 0
+    Receiving objects: 100% (40/40), done.
+    Resolving deltas: 100% (14/14), done.
   #+END_SRC
 
   Just the master branch is cloned in the local machine. You can use "git branch" to check:
   #+BEGIN_SRC shell
-  $ git branch
-  * master
+    $ git branch
+    ,* master
   #+END_SRC
 
   If you want to work on the branch develop, you need to create the develop branch and map to the remote develop branch in GitHub:
   #+BEGIN_SRC shell
-  $ git checkout -b develop origin/dev
+    $ git checkout -b develop origin/dev
   #+END_SRC
 
   Then, you can work on the created branch, develop and push the commits to the remote one. 
   #+BEGIN_SRC shell
-  $ git add env.txt
+    $ git add env.txt
 
-  $ git commit -m "add env"
-  [dev 7a5e5dd] add env
+    $ git commit -m "add env"
+    [dev 7a5e5dd] add env
     1 file changed, 1 insertion(+)
     create mode 100644 env.txt
 
-  $ git push origin dev
-  Counting objects: 3, done.
-  Delta compression using up to 4 threads.
-  Compressing objects: 100% (2/2), done.
-  Writing objects: 100% (3/3), 308 bytes | 308.00 KiB/s, done.
-  Total 3 (delta 0), reused 0 (delta 0)
-  To github.com:michaelliao/learngit.git
-     f52c633..7a5e5dd  dev -> dev
+    $ git push origin dev
+    Counting objects: 3, done.
+    Delta compression using up to 4 threads.
+    Compressing objects: 100% (2/2), done.
+    Writing objects: 100% (3/3), 308 bytes | 308.00 KiB/s, done.
+    Total 3 (delta 0), reused 0 (delta 0)
+    To github.com:michaelliao/learngit.git
+    f52c633..7a5e5dd  dev -> dev
   #+END_SRC
 
   Your team partners may push their commits including the documents/codes before you are working on. And you may push want you have done to the repository in GitHub: 
 
   #+BEGIN_SRC shell
-  $ cat env.txt
-  env
+    $ cat env.txt
+    env
 
-  $ git add env.txt
+    $ git add env.txt
 
-  $ git commit -m "add new env"
-  [dev 7bd91f1] add new env
-   1 file changed, 1 insertion(+)
-   create mode 100644 env.txt
-  $ git push origin dev
-   To github.com:michaelliao/learngit.git
-   ! [rejected]        dev -> dev (non-fast-forward)
-  error: failed to push some refs to 'git@github.Ethanlinyf/learngit.git'
-  hint: Updates were rejected because the tip of your current branch is behind
-  hint: its remote counterpart. Integrate the remote changes (e.g.
-  hint: 'git pull ...') before pushing again.
-  hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+    $ git commit -m "add new env"
+    [dev 7bd91f1] add new env
+    1 file changed, 1 insertion(+)
+    create mode 100644 env.txt
+    $ git push origin dev
+    To github.com:michaelliao/learngit.git
+    ! [rejected]        dev -> dev (non-fast-forward)
+    error: failed to push some refs to 'git@github.Ethanlinyf/learngit.git'
+    hint: Updates were rejected because the tip of your current branch is behind
+    hint: its remote counterpart. Integrate the remote changes (e.g.
+                                                                hint: 'git pull ...') before pushing again.
+    hint: See the 'Note about fast-forwards' in 'git push --help' for details.
   #+END_SRC
 
   "error: failed to push some refs to" shows the pushing is not successful. The error requests you to solve the conflict as discussed before. But you need to checkout from the remote develop in GitHub. From the hint 'git pull ...', you can pull the latest commit for the develop branch in the GitHub, origin/develop:
   #+BEGIN_SRC shell
-  $ git pull
-  There is no tracking information for the current branch.
-  Please specify which branch you want to merge with.
-  See git-pull(1) for details.
+    $ git pull
+    There is no tracking information for the current branch.
+    Please specify which branch you want to merge with.
+    See git-pull(1) for details.
 
-      git pull <remote> <branch>
-  If you wish to set tracking information for this branch you can do so with:
+    git pull <remote> <branch>
+    If you wish to set tracking information for this branch you can do so with:
 
-      git branch --set-upstream-to=origin/<branch> dev
+    git branch --set-upstream-to=origin/<branch> dev
   #+END_SRC
 
   It shows the pull is not successful. The reason is that you did not map the local develop branch to the remote one. From the hint, you can build the link for them: 
   #+BEGIN_SRC shell
-  $ git branch --set-upstream-to=origin/dev dev
-  Branch 'dev' set up to track remote branch 'dev' from 'origin'.
+    $ git branch --set-upstream-to=origin/dev dev
+    Branch 'dev' set up to track remote branch 'dev' from 'origin'.
   #+END_SRC
 
   Then, pull again: 
@@ -763,17 +763,17 @@ As we discussed working on many branches, such as master, develop, bug, feature 
 
   It shows you are successful to pull the latest version of the remote develop branch in GitHub and a conflict pops up, which needs you to manually resolve it, see the topic " Conflict resolution". The, commit and push to the remote develop branch:
   #+BEGIN_SRC shell
-  $ git commit -m "fix env conflict"
-  [dev 57c53ab] fix env conflict
+    $ git commit -m "fix env conflict"
+    [dev 57c53ab] fix env conflict
 
-  $ git push origin dev
-  Counting objects: 6, done.
-  Delta compression using up to 4 threads.
-  Compressing objects: 100% (4/4), done.
-  Writing objects: 100% (6/6), 621 bytes | 621.00 KiB/s, done.
-  Total 6 (delta 0), reused 0 (delta 0)
-  To github.com:michaelliao/learngit.git
-     7a5e5dd..57c53ab  dev -> dev
+    $ git push origin dev
+    Counting objects: 6, done.
+    Delta compression using up to 4 threads.
+    Compressing objects: 100% (4/4), done.
+    Writing objects: 100% (6/6), 621 bytes | 621.00 KiB/s, done.
+    Total 6 (delta 0), reused 0 (delta 0)
+    To github.com:michaelliao/learngit.git
+    7a5e5dd..57c53ab  dev -> dev
   #+END_SRC
 
 In summary, the teamwork through GitHub can be concluded as follows:
@@ -787,25 +787,25 @@ This is how teamwork can be achieve through GitHub.
 *** Rebase
 In the previous discussion, we can see that it is easy to get conflicted when a team working on the same branch. Even no conflict there, you may need to pull first and merge to the one locally and then after your job, you just can push successfully. See the example: 
 #+BEGIN_SRC shell
-$ git log --graph --pretty=oneline --abbrev-commit
- * d1be385 (HEAD -> master, origin/master) init hello
- *   e5e69f1 Merge branch 'develop'
- |\  
- | *   57c53ab (origin/develop, develop) fix env conflict
- | |\  
- | | * 7a5e5dd add env
- | * | 7bd91f1 add new env
- | |/  
- * |   12a631b merged bug fix 101
- |\ \  
- | * | 4c805e2 fix bug 101
- |/ /  
- * |   e1e9c68 merge with no-ff
- |\ \  
- | |/  
- | * f52c633 add merge
- |/  
- *   cf810e4 conflict fixed
+  $ git log --graph --pretty=oneline --abbrev-commit
+  ,* d1be385 (HEAD -> master, origin/master) init hello
+  ,*   e5e69f1 Merge branch 'develop'
+       |\  
+       | *   57c53ab (origin/develop, develop) fix env conflict
+       | |\  
+       | | * 7a5e5dd add env
+       | * | 7bd91f1 add new env
+       | |/  
+       ,* |   12a631b merged bug fix 101
+       |\ \  
+       | * | 4c805e2 fix bug 101
+       |/ /  
+       ,* |   e1e9c68 merge with no-ff
+       |\ \  
+       | |/  
+       | * f52c633 add merge
+       |/  
+       ,*   cf810e4 conflict fixed
 #+END_SRC
 
 The records look mess. Is it possible to make the work flow clear? Yes, using "rebase"
@@ -815,48 +815,48 @@ Let's have a look how to make forks become a clear line stream.
 After synchronisation with the remote branch, two commits are attempted for the file "hello.py". 
 We use "$git log" to check the record:
 #+BEGIN_SRC shell
-$git log --graph --pretty=oneline --abbrev-commit
- * 582d922 (HEAD -> master) add author
- * 8875536 add comment
- * d1be385 (origin/master) init hello
- * e5e69f1 Merge branch 'develop'
- |\  
- | *   57c53ab (origin/dev, develop) fix env conflict
- | |\  
- | | * 7a5e5dd add env
- | * | 7bd91f1 add new env
-...
+  $git log --graph --pretty=oneline --abbrev-commit
+  ,* 582d922 (HEAD -> master) add author
+  ,* 8875536 add comment
+  ,* d1be385 (origin/master) init hello
+  ,* e5e69f1 Merge branch 'develop'
+       |\  
+       | *   57c53ab (origin/dev, develop) fix env conflict
+       | |\  
+       | | * 7a5e5dd add env
+       | * | 7bd91f1 add new env
+       ...
 #+END_SRC  
 
 It shows the recent branch HEADs for the local master (HEAD -> master) and the remote one (origin/master) are "582d922 add author" and "d1be385 init hello". The local mast branch has two more commits than the remote one. 
 
 Now, we try to push the local master branch to the remote one. 
 #+BEGIN_SRC shell
-$ git push origin master
-To github.com:michaelliao/learngit.git
- ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to 'git@github.com:michaelliao/learngit.git'
-hint: Updates were rejected because the remote contains work that you do
-hint: not have locally. This is usually caused by another repository pushing
-hint: to the same ref. You may want to first integrate the remote changes
-hint: (e.g., 'git pull ...') before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+  $ git push origin master
+  To github.com:michaelliao/learngit.git
+  ! [rejected]        master -> master (fetch first)
+  error: failed to push some refs to 'git@github.com:michaelliao/learngit.git'
+  hint: Updates were rejected because the remote contains work that you do
+  hint: not have locally. This is usually caused by another repository pushing
+  hint: to the same ref. You may want to first integrate the remote changes
+  hint: (e.g., 'git pull ...') before pushing again.
+  hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 #+END_SRC
 
 It is rejected because other team members pushed to the remote master branch before. Then, you need to pull it first:
 #+BEGIN_SRC shell
-$ git pull
-remote: Counting objects: 3, done.
-remote: Compressing objects: 100% (1/1), done.
-remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
-Unpacking objects: 100% (3/3), done.
-From github.com:michaelliao/learngit
-   d1be385..f005ed4  master     -> origin/master
- * [new tag]         v1.0       -> v1.0
-Auto-merging hello.py
-Merge made by the 'recursive' strategy.
- hello.py | 1 +
- 1 file changed, 1 insertion(+)
+  $ git pull
+  remote: Counting objects: 3, done.
+  remote: Compressing objects: 100% (1/1), done.
+  remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+  Unpacking objects: 100% (3/3), done.
+  From github.com:michaelliao/learngit
+  d1be385..f005ed4  master     -> origin/master
+  ,* [new tag]         v1.0       -> v1.0
+  Auto-merging hello.py
+  Merge made by the 'recursive' strategy.
+  hello.py | 1 +
+  1 file changed, 1 insertion(+)
 #+END_SRC
 
 And check the status: 
@@ -884,51 +884,51 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 Then, to make the work flow clear, "rebase" can be used: 
 #+BEGIN_SRC shell
-$ git rebase
-First, rewinding head to replay your work on top of it...
-Applying: add comment
-Using index info to reconstruct a base tree...
-M	hello.py
-Falling back to patching base and 3-way merge...
-Auto-merging hello.py
-Applying: add author
-Using index info to reconstruct a base tree...
-M	hello.py
-Falling back to patching base and 3-way merge...
-Auto-merging hello.py
+  $ git rebase
+  First, rewinding head to replay your work on top of it...
+  Applying: add comment
+  Using index info to reconstruct a base tree...
+  M	hello.py
+  Falling back to patching base and 3-way merge...
+  Auto-merging hello.py
+  Applying: add author
+  Using index info to reconstruct a base tree...
+  M	hello.py
+  Falling back to patching base and 3-way merge...
+  Auto-merging hello.py
 #+END_SRC
 
 How it works: 
 #+BEGIN_SRC shell
-$ git log --graph --pretty=oneline --abbrev-commit
- * 7e61ed4 (HEAD -> master) add author
- * 3611cfe add comment
- * f005ed4 (origin/master) set exit=1
- * d1be385 init hello
-...
+  $ git log --graph --pretty=oneline --abbrev-commit
+  ,* 7e61ed4 (HEAD -> master) add author
+  ,* 3611cfe add comment
+  ,* f005ed4 (origin/master) set exit=1
+  ,* d1be385 init hello
+  ...
 #+END_SRC
 
 It shows the forked record becomes a single log stream. How does it achieve? The local two commits are moved after the "f005ed4 (origin/master) set exit=1". After rebase operation, the contents are the same, except the commits changed to rebase "f005ed4 (origin/master) set exit=1", not "d1be385 init hello". However, after the commit "7e61ed4", the contents are the same.(What's the prons and cons of "rebase"?)
 #+BEGIN_SRC shell
-$ git push origin master
-Counting objects: 6, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (5/5), done.
-Writing objects: 100% (6/6), 576 bytes | 576.00 KiB/s, done.
-Total 6 (delta 2), reused 0 (delta 0)
-remote: Resolving deltas: 100% (2/2), completed with 1 local object.
-To github.com:michaelliao/learngit.git
-   f005ed4..7e61ed4  master -> master
+  $ git push origin master
+  Counting objects: 6, done.
+  Delta compression using up to 4 threads.
+  Compressing objects: 100% (5/5), done.
+  Writing objects: 100% (6/6), 576 bytes | 576.00 KiB/s, done.
+  Total 6 (delta 2), reused 0 (delta 0)
+  remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+  To github.com:michaelliao/learngit.git
+  f005ed4..7e61ed4  master -> master
 #+END_SRC
 
 You could check it by "git log":
 #+BEGIN_SRC shell
-$ git log --graph --pretty=oneline --abbrev-commit
- * 7e61ed4 (HEAD -> master, origin/master) add author
- * 3611cfe add comment
- * f005ed4 set exit=1
- * d1be385 init hello
- ...
+  $ git log --graph --pretty=oneline --abbrev-commit
+  ,* 7e61ed4 (HEAD -> master, origin/master) add author
+  ,* 3611cfe add comment
+  ,* f005ed4 set exit=1
+  ,* d1be385 init hello
+  ...
 #+END_SRC
 
 The remote record also become a straight work flow, not forked one. 
@@ -944,25 +944,25 @@ Reference: https://www.git-tower.com/learn/git/ebook/en/desktop-gui/advanced-top
 - Listing Your Tags
 Listing the existing tags in Git is straightforward. Just type git tag (with optional -l or --list):
 #+BEGIN_SRC shell
-$ git tag
-v1.0
-v2.0
+  $ git tag
+  v1.0
+  v2.0
 #+END_SRC
 
 You can also search for tags that match a particular pattern. 
 
 #+BEGIN_SRC shell
-$ git tag -l "v1.8.5*"
-v1.8.5
-v1.8.5-rc0
-v1.8.5-rc1
-v1.8.5-rc2
-v1.8.5-rc3
-v1.8.5.1
-v1.8.5.2
-v1.8.5.3
-v1.8.5.4
-v1.8.5.5
+  $ git tag -l "v1.8.5*"
+  v1.8.5
+  v1.8.5-rc0
+  v1.8.5-rc1
+  v1.8.5-rc2
+  v1.8.5-rc3
+  v1.8.5.1
+  v1.8.5.2
+  v1.8.5.3
+  v1.8.5.4
+  v1.8.5.5
 #+END_SRC
 
 - Creating Tags
@@ -977,121 +977,121 @@ Annotated tags, however, are stored as full objects in the Git database. They’
 Creating an annotated tag in Git is simple. The easiest way is to specify -a when you run the tag command:
 
 #+BEGIN_SRC shell
-$ git tag -a v1.4 -m "my version 1.4"
-$ git tag
-v0.1
-v1.3
-v1.4
+  $ git tag -a v1.4 -m "my version 1.4"
+  $ git tag
+  v0.1
+  v1.3
+  v1.4
 #+END_SRC
 
 You can see the tag data along with the commit that was tagged by using the git show command:
 #+BEGIN_SRC shell
-$ git show v1.4
-tag v1.4
-Tagger: Ben Straub <ben@straub.cc>
-Date:   Sat May 3 20:19:12 2014 -0700
+  $ git show v1.4
+  tag v1.4
+  Tagger: Ben Straub <ben@straub.cc>
+  Date:   Sat May 3 20:19:12 2014 -0700
 
-my version 1.4
+  my version 1.4
 
-commit ca82a6dff817ec66f44342007202690a93763949
-Author: Scott Chacon <schacon@gee-mail.com>
-Date:   Mon Mar 17 21:52:11 2008 -0700
+  commit ca82a6dff817ec66f44342007202690a93763949
+  Author: Scott Chacon <schacon@gee-mail.com>
+  Date:   Mon Mar 17 21:52:11 2008 -0700
 
-    changed the version number
+  changed the version number
 #+END_SRC
 
 - Lightweight Tags
 Another way to tag commits is with a lightweight tag. This is basically the commit checksum stored in a file — no other information is kept. To create a lightweight tag, don’t supply any of the -a, -s, or -m options, just provide a tag name:
 #+BEGIN_SRC shell
-$ git tag v1.4-lw
-$ git tag
-v0.1
-v1.3
-v1.4
-v1.4-lw
-v1.5
+  $ git tag v1.4-lw
+  $ git tag
+  v0.1
+  v1.3
+  v1.4
+  v1.4-lw
+  v1.5
 #+END_SRC
 
 This time, if you run git show on the tag, you don’t see the extra tag information. The command just shows the commit:
 #+BEGIN_SRC shell
-$ git show v1.4-lw
-commit ca82a6dff817ec66f44342007202690a93763949
-Author: Scott Chacon <schacon@gee-mail.com>
-Date:   Mon Mar 17 21:52:11 2008 -0700
+  $ git show v1.4-lw
+  commit ca82a6dff817ec66f44342007202690a93763949
+  Author: Scott Chacon <schacon@gee-mail.com>
+  Date:   Mon Mar 17 21:52:11 2008 -0700
 
-    changed the version number
+  changed the version number
 #+END_SRC
 
 - Tagging Later
 You can also tag commits after you’ve moved past them. Suppose your commit history looks like this:
 #+BEGIN_SRC shell
-$ git log --pretty=oneline
-15027957951b64cf874c3557a0f3547bd83b3ff6 Merge branch 'experiment'
-a6b4c97498bd301d84096da251c98a07c7723e65 beginning write support
-0d52aaab4479697da7686c15f77a3d64d9165190 one more thing
-6d52a271eda8725415634dd79daabbc4d9b6008e Merge branch 'experiment'
-0b7434d86859cc7b8c3d5e1dddfed66ff742fcbc added a commit function
-4682c3261057305bdd616e23b64b0857d832627b added a todo file
-166ae0c4d3f420721acbb115cc33848dfcc2121a started write support
-9fceb02d0ae598e95dc970b74767f19372d61af8 updated rakefile
-964f16d36dfccde844893cac5b347e7b3d44abbc commit the todo
-8a5cbc430f1a9c3d00faaeffd07798508422908a updated readme
+  $ git log --pretty=oneline
+  15027957951b64cf874c3557a0f3547bd83b3ff6 Merge branch 'experiment'
+  a6b4c97498bd301d84096da251c98a07c7723e65 beginning write support
+  0d52aaab4479697da7686c15f77a3d64d9165190 one more thing
+  6d52a271eda8725415634dd79daabbc4d9b6008e Merge branch 'experiment'
+  0b7434d86859cc7b8c3d5e1dddfed66ff742fcbc added a commit function
+  4682c3261057305bdd616e23b64b0857d832627b added a todo file
+  166ae0c4d3f420721acbb115cc33848dfcc2121a started write support
+  9fceb02d0ae598e95dc970b74767f19372d61af8 updated rakefile
+  964f16d36dfccde844893cac5b347e7b3d44abbc commit the todo
+  8a5cbc430f1a9c3d00faaeffd07798508422908a updated readme
 #+END_SRC
 
 Now, suppose you forgot to tag the project at v1.2, which was at the “updated rakefile” commit. You can add it after the fact. To tag that commit, you specify the commit checksum (or part of it) at the end of the command:
 
 #+BEGIN_SRC shell
-$ git tag -a v1.2 9fceb02
+  $ git tag -a v1.2 9fceb02
 #+END_SRC
 
 You can see that you’ve tagged the commit:
 #+BEGIN_SRC shell
-$ git tag
-v0.1
-v1.2
-v1.3
-v1.4
-v1.4-lw
-v1.5
+  $ git tag
+  v0.1
+  v1.2
+  v1.3
+  v1.4
+  v1.4-lw
+  v1.5
 
-$ git show v1.2
-tag v1.2
-Tagger: Scott Chacon <schacon@gee-mail.com>
-Date:   Mon Feb 9 15:32:16 2009 -0800
+  $ git show v1.2
+  tag v1.2
+  Tagger: Scott Chacon <schacon@gee-mail.com>
+  Date:   Mon Feb 9 15:32:16 2009 -0800
 
-version 1.2
-commit 9fceb02d0ae598e95dc970b74767f19372d61af8
-Author: Magnus Chacon <mchacon@gee-mail.com>
-Date:   Sun Apr 27 20:43:35 2008 -0700
+  version 1.2
+  commit 9fceb02d0ae598e95dc970b74767f19372d61af8
+  Author: Magnus Chacon <mchacon@gee-mail.com>
+  Date:   Sun Apr 27 20:43:35 2008 -0700
 
-    updated rakefile
-...
+  updated rakefile
+  ...
 #+END_SRC
 
 - Sharing Tagging
 By default, the git push command doesn’t transfer tags to remote servers. You will have to explicitly push tags to a shared server after you have created them. This process is just like sharing remote branches — you can run git push origin <tagname>.
 
 #+BEGIN_SRC shell
-$ git push origin v1.5
-Counting objects: 14, done.
-Delta compression using up to 8 threads.
-Compressing objects: 100% (12/12), done.
-Writing objects: 100% (14/14), 2.05 KiB | 0 bytes/s, done.
-Total 14 (delta 3), reused 0 (delta 0)
-To git@github.com:schacon/simplegit.git
- * [new tag]         v1.5 -> v1.5
+  $ git push origin v1.5
+  Counting objects: 14, done.
+  Delta compression using up to 8 threads.
+  Compressing objects: 100% (12/12), done.
+  Writing objects: 100% (14/14), 2.05 KiB | 0 bytes/s, done.
+  Total 14 (delta 3), reused 0 (delta 0)
+  To git@github.com:schacon/simplegit.git
+  ,* [new tag]         v1.5 -> v1.5
 #+END_SRC
 
 If you have a lot of tags that you want to push up at once, you can also use the --tags option to the git push command. This will transfer all of your tags to the remote server that are not already there.
 
 #+BEGIN_SRC shell
-$ git push origin --tags
-Counting objects: 1, done.
-Writing objects: 100% (1/1), 160 bytes | 0 bytes/s, done.
-Total 1 (delta 0), reused 0 (delta 0)
-To git@github.com:schacon/simplegit.git
- * [new tag]         v1.4 -> v1.4
- * [new tag]         v1.4-lw -> v1.4-lw
+  $ git push origin --tags
+  Counting objects: 1, done.
+  Writing objects: 100% (1/1), 160 bytes | 0 bytes/s, done.
+  Total 1 (delta 0), reused 0 (delta 0)
+  To git@github.com:schacon/simplegit.git
+  ,* [new tag]         v1.4 -> v1.4
+  ,* [new tag]         v1.4-lw -> v1.4-lw
 #+END_SRC
 
 Now, when someone else clones or pulls from your repository, they will get all your tags as well.
@@ -1101,53 +1101,53 @@ Now, when someone else clones or pulls from your repository, they will get all y
 To delete a tag on your local repository, you can use git tag -d <tagname>. For example, we could remove our lightweight tag above as follows:
 
 #+BEGIN_SRC shell
-$ git tag -d v1.4-lw
-Deleted tag 'v1.4-lw' (was e7d5add)
+  $ git tag -d v1.4-lw
+  Deleted tag 'v1.4-lw' (was e7d5add)
 #+END_SRC
 
 Note that this does not remove the tag from any remote servers. There are two common variations for deleting a tag from a remote server.
 
 The first variation is git push <remote> :refs/tags/<tagname>:
 #+BEGIN_SRC shell
-$ git push origin :refs/tags/v1.4-lw
-To /git@github.com:schacon/simplegit.git
- - [deleted]         v1.4-lw
+  $ git push origin :refs/tags/v1.4-lw
+  To /git@github.com:schacon/simplegit.git
+  - [deleted]         v1.4-lw
 #+END_SRC
 
 The way to interpret the above is to read it as the null value before the colon is being pushed to the remote tag name, effectively deleting it.
 
 The second (and more intuitive) way to delete a remote tag is with:
 #+BEGIN_SRC shell
-$ git push origin --delete <tagname>
+  $ git push origin --delete <tagname>
 #+END_SRC
 
 - Checking out Tags
 If you want to view the versions of files a tag is pointing to, you can do a git checkout of that tag, although this puts your repository in “detached HEAD” state, which has some ill side effects:
 #+BEGIN_SRC shell
-$ git checkout 2.0.0
-Note: checking out '2.0.0'.
+  $ git checkout 2.0.0
+  Note: checking out '2.0.0'.
 
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
+  You are in 'detached HEAD' state. You can look around, make experimental
+  changes and commit them, and you can discard any commits you make in this
+  state without impacting any branches by performing another checkout.
 
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
+  If you want to create a new branch to retain commits you create, you may
+  do so (now or later) by using -b with the checkout command again. Example:
 
-  git checkout -b <new-branch>
+     git checkout -b <new-branch>
 
-HEAD is now at 99ada87... Merge pull request #89 from schacon/appendix-final
+     HEAD is now at 99ada87... Merge pull request #89 from schacon/appendix-final
 
-$ git checkout 2.0-beta-0.1
-Previous HEAD position was 99ada87... Merge pull request #89 from schacon/appendix-final
-HEAD is now at df3f601... add atlas.json and cover image
+     $ git checkout 2.0-beta-0.1
+     Previous HEAD position was 99ada87... Merge pull request #89 from schacon/appendix-final
+     HEAD is now at df3f601... add atlas.json and cover image
 #+END_SRC
 
 In “detached HEAD” state, if you make changes and then create a commit, the tag will stay the same, but your new commit won’t belong to any branch and will be unreachable, except by the exact commit hash. Thus, if you need to make changes — say you’re fixing a bug on an older version, for instance — you will generally want to create a branch:
 
 #+BEGIN_SRC shell
-$ git checkout -b version2 v2.0.0
-Switched to a new branch 'version2'
+  $ git checkout -b version2 v2.0.0
+  Switched to a new branch 'version2'
 #+END_SRC
 
 If you do this and make a commit, your version2 branch will be slightly different than your v2.0.0 tag since it will move forward with your new changes, so do be careful.
@@ -1161,180 +1161,180 @@ If you do this and make a commit, your version2 branch will be slightly differen
 * Magit Tutorial
 ** Basic magit
 *** Create a git repo
-  [[info:magit#Repository%20setup][info:magit#Repository setup]]
-  You can create a git repo with M-x magit-init. This will create a git-repo in the current directory.
+[[info:magit#Repository%20setup][info:magit#Repository setup]]
+You can create a git repo with M-x magit-init. This will create a git-repo in the current directory.
 
-  #+BEGIN_SRC emacs-lisp
- (magit-init)
-  #+END_SRC
+#+BEGIN_SRC emacs-lisp
+  (magit-init)
+#+END_SRC
 
-  help:magit-init
+help:magit-init
 
 *** Clone a repo
-  [[info:magit#Repository%20setup][info:magit#Repository setup]]
+[[info:magit#Repository%20setup][info:magit#Repository setup]]
 
-  M-x magit-clone
+M-x magit-clone
 
-  This will prompt you for a repo, which is either a url, or a path, and a path to clone it to.
+This will prompt you for a repo, which is either a url, or a path, and a path to clone it to.
 
-  help:magit-clone
+help:magit-clone
 
 *** Check the status of your repo
-  [[info:magit#Status%20buffer][info:magit#Status buffer]]
+[[info:magit#Status%20buffer][info:magit#Status buffer]]
 
-  Run M-x magit-status to see the status of your repo.
+Run M-x magit-status to see the status of your repo.
 
-  Press "g" in the window to refresh it.
+Press "g" in the window to refresh it.
 
-  press "n" (next) or "p" (previous) to navigate in this window.
+press "n" (next) or "p" (previous) to navigate in this window.
 
-  help:magit-status
+help:magit-status
 
 *** Stage a file
-  [[info:magit#Staging%20and%20unstaging][info:magit#Staging and unstaging]]
+[[info:magit#Staging%20and%20unstaging][info:magit#Staging and unstaging]]
 
-  In the magit-status window, put your cursor on an unstaged file and press "s".
+In the magit-status window, put your cursor on an unstaged file and press "s".
 
-  If you press TAB on the file, it will expand to show the changes that are unstaged. Deletions show in red, and additions in green. The changes are in "hunks".
+If you press TAB on the file, it will expand to show the changes that are unstaged. Deletions show in red, and additions in green. The changes are in "hunks".
 
-  You can unstage a file with "u"
+You can unstage a file with "u"
 
 *** Commit a file
-  [[info:magit#Initiating%20a%20commit][info:magit#Initiating a commit]]
+[[info:magit#Initiating%20a%20commit][info:magit#Initiating a commit]]
 
-  [[info:magit#Editing%20commit%20messages][info:magit#Editing commit messages]]
+[[info:magit#Editing%20commit%20messages][info:magit#Editing commit messages]]
 
-  In the magit-status window with some files that are staged, press "c", review the options, and probably press "c" again. Enter a commit message and type "C-c C-c" to commit it, or "C-c C-k" to cancel it.
+In the magit-status window with some files that are staged, press "c", review the options, and probably press "c" again. Enter a commit message and type "C-c C-c" to commit it, or "C-c C-k" to cancel it.
 
 *** Diffs
-  [[info:magit#Diffing][info:magit#Diffing]]
+[[info:magit#Diffing][info:magit#Diffing]]
 
-  From the magit-status window, press "d" then "d" to see what has changed.
+From the magit-status window, press "d" then "d" to see what has changed.
 
 *** See the log
-  [[info:magit#Logging][info:magit#Logging]]
+[[info:magit#Logging][info:magit#Logging]]
 
-  In the magit-status window press "l", review the options, and press "l" again.
+In the magit-status window press "l", review the options, and press "l" again.
 
-  If you want to see only the commits that affected a file, in the magit-status window press "l" then "=f", enter the filename, and then press "l" again.
+If you want to see only the commits that affected a file, in the magit-status window press "l" then "=f", enter the filename, and then press "l" again.
 
 *** Push
-  [[info:magit#Pushing][info:magit#Pushing]]
+[[info:magit#Pushing][info:magit#Pushing]]
 
-  In the magit-status window press "P" then "p".
+In the magit-status window press "P" then "p".
 
-  Note that tags don't normally get pushed, but there are options ("T" to push a tag, and "t" to push all tags).
+Note that tags don't normally get pushed, but there are options ("T" to push a tag, and "t" to push all tags).
 
 *** Pull
-  [[info:magit#Pulling][info:magit#Pulling]]
-  In the magit-status window press "F" then "p".
+[[info:magit#Pulling][info:magit#Pulling]]
+In the magit-status window press "F" then "p".
 
 *** Run a command-line git command manually
-  [[info:magit#Running%20Git%20manually][info:magit#Running Git manually]]
-  In the magit-status window, type "!" to get the popup and choose what you want to do (e.g. where to run the command, etc... You do not need to type "git" in the command. Note you can also run a shell command from this interface.
+[[info:magit#Running%20Git%20manually][info:magit#Running Git manually]]
+In the magit-status window, type "!" to get the popup and choose what you want to do (e.g. where to run the command, etc... You do not need to type "git" in the command. Note you can also run a shell command from this interface.
 
 *** Check the output of the git command
-  Press "$"
+Press "$"
 
 *** Keybindings
-  [[info:magit#Keystroke%20Index][info:magit#Keystroke Index]]
+[[info:magit#Keystroke%20Index][info:magit#Keystroke Index]]
 ** Intermediate concepts
 *** Checkout an older version of a file
-  Use M-x magit-checkout-file select the branch, or enter a revision, and then choose a file.
+Use M-x magit-checkout-file select the branch, or enter a revision, and then choose a file.
 
- help:magit-checkout-file 
+help:magit-checkout-file 
 
- help:magit-find-file
- help:magit-find-file-other-window
+help:magit-find-file
+help:magit-find-file-other-window
 
 *** Search the commit messages for a pattern
- In a magit-status window press "l =g" enter a pattern to grep for, and then press "l".
+In a magit-status window press "l =g" enter a pattern to grep for, and then press "l".
 *** Revert a commit
- [[info:magit#Reverting][info:magit#Reverting]]
+[[info:magit#Reverting][info:magit#Reverting]]
 
-  Got to the log, select the commit and type "V" then "V".
+Got to the log, select the commit and type "V" then "V".
 *** Tag a version
-  [[info:magit#Tagging][info:magit#Tagging]]
+[[info:magit#Tagging][info:magit#Tagging]]
 
-  press "t" in the magit-status window. You can then create a tag, annotate it, delete tags, and prune them.
+press "t" in the magit-status window. You can then create a tag, annotate it, delete tags, and prune them.
 *** Checkout an existing branch.
-  [[info:magit#The%20branch%20popup][info:magit#The branch popup]]
+[[info:magit#The%20branch%20popup][info:magit#The branch popup]]
 
-  In the magit-status window press "b" then "b" and choose the branch.
+In the magit-status window press "b" then "b" and choose the branch.
 
-  To checkout a new branch, in the magit-status window press "b" then "c". Choose the branch to start from then a name for the new branch.
+To checkout a new branch, in the magit-status window press "b" then "c". Choose the branch to start from then a name for the new branch.
 
 *** Merge two branches
-  [[info:magit#Merging][info:magit#Merging]]
+[[info:magit#Merging][info:magit#Merging]]
 
-  In the magit-status window press "m", then "m" and select the branch to merge into the current one.
+In the magit-status window press "m", then "m" and select the branch to merge into the current one.
 *** TODO Resolving conflicts
- [[info:magit#Resolving%20conflicts][info:magit#Resolving conflicts]]
+[[info:magit#Resolving%20conflicts][info:magit#Resolving conflicts]]
 
- You will probably also want to get familiar with [[info:ediff#Top][info:ediff#Top]].
+You will probably also want to get familiar with [[info:ediff#Top][info:ediff#Top]].
 
- On a file in a magit-status window, press "e" to enter the 3-window ediff view. The A window is the version at HEAD, the B window is what is in the index, and the C window is the current version.
+On a file in a magit-status window, press "e" to enter the 3-window ediff view. The A window is the version at HEAD, the B window is what is in the index, and the C window is the current version.
 
 *** Fetching
- [[info:magit#Fetching][info:magit#Fetching]]
+[[info:magit#Fetching][info:magit#Fetching]]
 
- In the magit-status window press "f".
+In the magit-status window press "f".
 
 *** Add a remote
-  [[info:magit#Remotes][info:magit#Remotes]]
+[[info:magit#Remotes][info:magit#Remotes]]
 
-  M-x magit-remote-add
-  then enter an alias, and the url.
+M-x magit-remote-add
+then enter an alias, and the url.
 
 *** Stashing
- [[info:magit#Stashing][info:magit#Stashing]]
+[[info:magit#Stashing][info:magit#Stashing]]
 
- Press "z" in the magit-status window
+Press "z" in the magit-status window
 *** Git blame
 ** Advanced concepts
 *** Resetting
- [[info:magit#Resetting][info:magit#Resetting]]
+[[info:magit#Resetting][info:magit#Resetting]]
 
 *** Rebasing 
-  [[info:magit#Rebasing][info:magit#Rebasing]]
+[[info:magit#Rebasing][info:magit#Rebasing]]
 
 **** Interactve rebasing
-  Open the log, select the oldest commit you want to rebase on then press "r" and then "i". Use M-p and M-n to move commits around. Press "s" on any commits you want to squash into the commit above it. C-c C-c will start the commands.
+Open the log, select the oldest commit you want to rebase on then press "r" and then "i". Use M-p and M-n to move commits around. Press "s" on any commits you want to squash into the commit above it. C-c C-c will start the commands.
 
-  From the magit-status on unpushed commits, you can also press "r" to get the rebase popup.
+From the magit-status on unpushed commits, you can also press "r" to get the rebase popup.
 
 **** Reword a commit message
-  "r w" allows you to reword the commit message.
+"r w" allows you to reword the commit message.
 
 *** Create patches
-  [[info:magit#Creating%20and%20sending%20patches][info:magit#Creating and sending patches]]
+[[info:magit#Creating%20and%20sending%20patches][info:magit#Creating and sending patches]]
 
-  In magit-status window, press "W"
+In magit-status window, press "W"
 
-  "W p" creates patches
-  "W r" makes a pull request. This just creates an email with information in it. It is not a GitHUB request, and it is only useful if there is a public, external copy of the repo.
+"W p" creates patches
+"W r" makes a pull request. This just creates an email with information in it. It is not a GitHUB request, and it is only useful if there is a public, external copy of the repo.
 *** Cherry-picking 
- [[info:magit#Cherry%20picking][info:magit#Cherry picking]]
+[[info:magit#Cherry%20picking][info:magit#Cherry picking]]
 
- Press "A"
+Press "A"
 
 *** Apply patches
-  [[info:magit#Applying%20patches][info:magit#Applying patches]]
+[[info:magit#Applying%20patches][info:magit#Applying patches]]
 
 *** Notes about commits
-  [[info:magit#Notes][info:magit#Notes]]
+[[info:magit#Notes][info:magit#Notes]]
 
-  Press "T" to attach a note.
+Press "T" to attach a note.
 
-  A typical use of notes is to supplement a commit message without changing the
-	  commit itself. Notes can be shown by git log along with the original
-	  commit message. To distinguish these notes from the message stored in
-	  the commit object, the notes are indented like the message, after an
-	  unindented line saying "Notes (<refname>):" (or "Notes:" for
-	  refs/notes/commits).
+A typical use of notes is to supplement a commit message without changing the
+commit itself. Notes can be shown by git log along with the original
+commit message. To distinguish these notes from the message stored in
+the commit object, the notes are indented like the message, after an
+unindented line saying "Notes (<refname>):" (or "Notes:" for
+refs/notes/commits).
 
 *** Cherry-picking 
- [[info:magit#Cherry%20picking][info:magit#Cherry picking]]
+[[info:magit#Cherry%20picking][info:magit#Cherry picking]]
 
 * Tips
 - remove all files in the .gitignore
@@ -1356,9 +1356,20 @@ If you do this and make a commit, your version2 branch will be slightly differen
     2. rm -rf .git/moudle/<path of the submodule>
     3. git config --remove-section submodule.<path-to-submodule>
 
-  if it is for the module update, you should comfirm the settings are also
-  updated. 
+    if it is for the module update, you should comfirm the settings are also
+    updated.
 
+  + Fetch submodules:
+    #+begin_src shell
+      git submodule update --init --recursive
+      git submodule foreach git reset --hard
+      git submodule foreach git checkout master
+    #+end_src
+
+  + Update the submodules to the latest
+    #+begin_src shell
+      git submodule foreach git pull --rebase
+    #+end_src
 
 * Other topic
 ** gitignore
