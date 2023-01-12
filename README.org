@@ -1334,7 +1334,7 @@ refs/notes/commits).
 *** Cherry-picking 
 [[info:magit#Cherry%20picking][info:magit#Cherry picking]]
 
-* COMMENT Tips
+* Tips
 - Remove all files in the .gitignore
   #+begin_src shell
     git rm -r --cached .
