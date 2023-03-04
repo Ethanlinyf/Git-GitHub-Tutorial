@@ -16,6 +16,10 @@
 #+DRAWERS: ANSWER
 #+STARTUP: content
 
+#+begin_quote
+While exploring difference, never lose sight of sameness for it is sameness that brings us together. -- John Briggs
+#+end_quote
+
 * Primer
 ** What is Version Control
 #+CAPTION: A successful Git branching model
@@ -1438,5 +1442,5 @@ refs/notes/commits).
       git submodule foreach git pull --rebase
     #+end_src
 
-* Other topic
+* Other Topics
 ** gitignore
