@@ -3,18 +3,9 @@
 #+DATE: 2019-07-01 Mon
 #+AUTHOR: Dr Yufeng Lin
 #+EMAIL: yourslinyf@gmail.com
-#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
-#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
-#+OPTIONS: e:t email:nil f:t inline:t num:t p:nil pri:nil stat:t
-#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:t todo:t |:t
-#+CREATOR: Emacs 25.2.2 (Org mode 8.2.10)
-#+DESCRIPTION:
-#+EXCLUDE_TAGS: noexport
-#+KEYWORDS:
-#+LANGUAGE: en
-#+SELECT_TAGS: export
 #+DRAWERS: ANSWER
 #+STARTUP: content
+#+OPTIONS: comment:org
 
 #+begin_quote
 While exploring difference, never lose sight of sameness for it is sameness that brings us together. -- John Briggs
