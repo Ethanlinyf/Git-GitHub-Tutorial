@@ -1159,7 +1159,6 @@ If you do this and make a commit, your version2 branch will be slightly differen
 ** Customization
 *** TBD
 
-
 * Magit Tutorial
 ** Basic magit
 *** Create a git repo
@@ -1339,6 +1338,14 @@ refs/notes/commits).
 [[info:magit#Cherry%20picking][info:magit#Cherry picking]]
 
 * Tips
+- Amend git commit
+  #+begin_src shell
+    git commit --amend
+  #+end_src
+  then, push to the remote repository:
+  #+begin_src shell
+    git push -f
+  #+end_src
 - Remove all files in the .gitignore
   #+begin_src shell
     git rm -r --cached .
@@ -1443,4 +1450,7 @@ refs/notes/commits).
     #+end_src
 
 * Other Topics
+:PROPERTIES:
+:VISIBILITY: folded
+:END:
 ** gitignore

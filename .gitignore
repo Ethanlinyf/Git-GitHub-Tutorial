@@ -1,0 +1,4 @@
+git-backup/
+.DS_Store
+.org-src-babel
+*.~undo-tree~
