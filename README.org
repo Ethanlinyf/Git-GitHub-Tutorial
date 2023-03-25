@@ -1449,8 +1449,17 @@ refs/notes/commits).
       git submodule foreach git pull --rebase
     #+end_src
 
+    
+
 * Other Topics
 :PROPERTIES:
 :VISIBILITY: folded
 :END:
 ** gitignore
+
+
+* Comment Blocks:
+#+begin_comment
+** This is comment blocks
+This block is foldable. 
+#+end_comment
