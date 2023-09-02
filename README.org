@@ -376,18 +376,18 @@ Then, use "git log" to show how the branch has been merged.
 #+BEGIN_SRC shell 
   $ git log --graph --pretty=oneline --abbrev-commit
   ,*   cf810e4 (HEAD -> master) conflict fixed
-              |\  
-              | * 14096d0 (feature1) AND simple
-              ,* | 5dc6824 & simple
-              |/  
-              ,* b17d20e branch test
-              ,* d46f35e (origin/master) remove test.txt
-              ,* b84166e add test.txt
-              ,* 519219b git tracks changes
-              ,* e43a48b understand how stage works
-              ,* 1094adb append GPL
-              ,* e475afc add distributed
-              ,* eaadf4e wrote a readme file
+                      |\  
+                      | * 14096d0 (feature1) AND simple
+                      ,* | 5dc6824 & simple
+                      |/  
+                      ,* b17d20e branch test
+                      ,* d46f35e (origin/master) remove test.txt
+                      ,* b84166e add test.txt
+                      ,* 519219b git tracks changes
+                      ,* e43a48b understand how stage works
+                      ,* 1094adb append GPL
+                      ,* e475afc add distributed
+                      ,* eaadf4e wrote a readme file
 #+END_SRC
 
 In the final step, you can delete the feature_1 branch. 
@@ -433,11 +433,11 @@ In this merge, a new commit was created and can be checked by "git log":
 #+BEGIN_SRC shell
   $ git log --graph --pretty=oneline --abbrev-commit
   ,*   e1e9c68 (HEAD -> master) merge with no-ff
-              |\  
-              | * f52c633 (dev) add merge
-              |/  
-              ,*   cf810e4 conflict fixed
-              ...
+                      |\  
+                      | * f52c633 (dev) add merge
+                      |/  
+                      ,*   cf810e4 conflict fixed
+                      ...
 #+END_SRC
 
 This is the case how to merge without the fast forward mode. 
@@ -785,22 +785,22 @@ In the previous discussion, we can see that it is easy to get conflicted when a 
   $ git log --graph --pretty=oneline --abbrev-commit
   ,* d1be385 (HEAD -> master, origin/master) init hello
   ,*   e5e69f1 Merge branch 'develop'
-               |\  
-               | *   57c53ab (origin/develop, develop) fix env conflict
-               | |\  
-               | | * 7a5e5dd add env
-               | * | 7bd91f1 add new env
-               | |/  
-               ,* |   12a631b merged bug fix 101
-               |\ \  
-               | * | 4c805e2 fix bug 101
-               |/ /  
-               ,* |   e1e9c68 merge with no-ff
-               |\ \  
-               | |/  
-               | * f52c633 add merge
-               |/  
-               ,*   cf810e4 conflict fixed
+                       |\  
+                       | *   57c53ab (origin/develop, develop) fix env conflict
+                       | |\  
+                       | | * 7a5e5dd add env
+                       | * | 7bd91f1 add new env
+                       | |/  
+                       ,* |   12a631b merged bug fix 101
+                       |\ \  
+                       | * | 4c805e2 fix bug 101
+                       |/ /  
+                       ,* |   e1e9c68 merge with no-ff
+                       |\ \  
+                       | |/  
+                       | * f52c633 add merge
+                       |/  
+                       ,*   cf810e4 conflict fixed
 #+END_SRC
 
 The records look mess. Is it possible to make the work flow clear? Yes, using "rebase"
@@ -815,12 +815,12 @@ We use "$git log" to check the record:
   ,* 8875536 add comment
   ,* d1be385 (origin/master) init hello
   ,* e5e69f1 Merge branch 'develop'
-               |\  
-               | *   57c53ab (origin/dev, develop) fix env conflict
-               | |\  
-               | | * 7a5e5dd add env
-               | * | 7bd91f1 add new env
-               ...
+                       |\  
+                       | *   57c53ab (origin/dev, develop) fix env conflict
+                       | |\  
+                       | | * 7a5e5dd add env
+                       | * | 7bd91f1 add new env
+                       ...
 #+END_SRC  
 
 It shows the recent branch HEADs for the local master (HEAD -> master) and the remote one (origin/master) are "582d922 add author" and "d1be385 init hello". The local mast branch has two more commits than the remote one. 
@@ -1329,6 +1329,11 @@ refs/notes/commits).
 [[info:magit#Cherry%20picking][info:magit#Cherry picking]]
 
 * Tips
+- Rename Branch
+  git branch -m master <BRANCH>
+  git fetch origin
+  git branch -u origin/<BRANCH> <BRANCH>
+  git remote set-head origin -a
 - Amend git commit
   #+begin_src shell
     git commit --amend
@@ -1403,44 +1408,44 @@ refs/notes/commits).
       git config --remove-section submodule.site-lisp/auto-save
     #+end_src
 
-        if it is for the module update, you should comfirm the settings are also
-        updated.
-        * One more way to remove Git submodules
-          In this section, we are going to see how you can effectively remove a Git submodule from your repository.
+    if it is for the module update, you should comfirm the settings are also
+    updated.
+    * One more way to remove Git submodules
+      In this section, we are going to see how you can effectively remove a Git submodule from your repository.
 
-          In order to remove a Git submodule from your repository, use
-          the “git submodule deinit” command followed by the “git rm”
-          command and specify the name of the submodule folder.
+      In order to remove a Git submodule from your repository, use
+      the “git submodule deinit” command followed by the “git rm”
+      command and specify the name of the submodule folder.
 
-          #+begin_src shell
-            git submodule deinit <submodule>
-            git rm <submodule>
-          #+end_src
+      #+begin_src shell
+        git submodule deinit <submodule>
+        git rm <submodule>
+      #+end_src
 
-          When executing the “git submodule deinit” command, you will
-          delete the local submodule configuration stored in your
-          repository.
+      When executing the “git submodule deinit” command, you will
+      delete the local submodule configuration stored in your
+      repository.
 
-          As a consequence, the line referencing the submodule will be
-          deleted from your .git/config file.
+      As a consequence, the line referencing the submodule will be
+      deleted from your .git/config file.
 
-          The “git rm” command is used in order to delete submodules
-          files from the working directory and remaining .git folders.
+      The “git rm” command is used in order to delete submodules
+      files from the working directory and remaining .git folders.
           
           
-      + Fetch submodules:
-        #+begin_src shell
-          git submodule update --init --recursive
-          git submodule foreach git reset --hard
-          git submodule foreach git checkout master
-        #+end_src
++ Fetch submodules:
+  #+begin_src shell
+    git submodule update --init --recursive
+    git submodule foreach git reset --hard
+    git submodule foreach git checkout master
+  #+end_src
 
   + Update the submodules to the latest
     #+begin_src shell
       git submodule foreach git pull --rebase
     #+end_src
 
-    
+
 
 * Other Topics
 :PROPERTIES:
@@ -1451,6 +1456,23 @@ refs/notes/commits).
 
 * Comment Blocks:
 #+begin_comment
-** This is comment blocks
+* This is comment blocks
 This block is foldable. 
 #+end_comment
+
+#+begin_html
+<details>
+<summary>
+Licence
+</summary>
+This program is free software. You can redistribute and/or modify it
+under [[https://www.gnu.org/licenses/gpl-3.0.en.html][GNU General Public License]] published by the Free Software
+Foundation, as well as Copyleft under [[https://thethingsengine.org][ThingsEngine]] project. The
+contributions are shared with the hope that this program will be
+useful, helpful and inspiring, but without any warranty; without even
+the implied warranty of merchantability or fitness for a particular
+purpose. 
+
+</details>
+#+end_html
+
