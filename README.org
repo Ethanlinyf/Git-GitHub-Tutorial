@@ -1329,6 +1329,10 @@ refs/notes/commits).
 [[info:magit#Cherry%20picking][info:magit#Cherry picking]]
 
 * Tips
+- Withdraw all the changes to the latest commit
+  #+begin_src shell
+    git reset --hard
+  #+end_src
 - Rename Branch
   git branch -m master <BRANCH>
   git fetch origin
